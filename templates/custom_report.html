@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Add Client</title>
+<!-- Favicon Icon -->
+{#<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">#}
+<!-- Animation CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="{{ url_for('static',filename='css/ico-moon.css') }}" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/themify-icons.css') }}">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/all.min.css') }}">
+{#<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">#}
+{#<link rel="stylesheet" href="assets/css/main.css">#}
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}">
+<link rel="stylesheet" id="layoutstyle" href="{{ url_for('static',filename='color/theme.css') }}">
+
+<!-- DatePicker CSS -->
+<link href="{{ url_for('static',filename='css/datepicker.min.css') }}" rel="stylesheet">
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    th {
+  cursor: pointer;
+}
+
+    </style>
+
+</head>
+
+
+
+<body>
+<!-- START HEADER -->
+<header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg"> 
+    	<a class="navbar-brand" href="index.html">
+            <!-- <h2 style="
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size:25px;
+        ">Logo</h2> -->
+
+    <img src="assets/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav attr-nav align-items-center">
+               
+                <li>
+                    <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                </li>
+                <!-- <li>
+                    <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                </li> -->
+                <li>
+                    <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+                </li>
+                    <li><a href="add_client.html" class="nav-link search_trigger"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> Add Client</button></a></li>
+                    <!-- <li><a href="reminder_followup.html" class="nav-link search_trigger"><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li> -->
+                    <!-- <li><a href="index.html" class="nav-link search_trigger"><i class="ion-android-person"></i></a> -->
+                       
+                    </li>
+                    <li><a href="index.html" class="nav-link search_trigger"><i class="ion-log-out" style="color: #000;font-size: 24px;"></i>&nbsp; Logout</a>
+                       
+                    </li>
+               
+                
+            </ul>
+        </div>
+    </nav>
+  </div>
+</header>
+<!-- END HEADER --> 
+<section id="contact">
+	<div class="container-fluid">
+    	<div class="row">
+            <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+            <div class="different_login animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                        <span> <button type="button" class="btn btn-outline-primary btn-radius mb-2">Get Reports</button></span>
+                    </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-md-2 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="different_login animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                    <label  style="font-weight: 700;">Get Report of: </label>
+                    <div class="custom_select">
+                        <select class="form-control not_chosen" name = "type" id="dropdown">
+                            <option value=""> --- Select --- </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="different_login animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                    <label  style="font-weight: 700;">Print Report : <span class="asterisk-color">*</span></label>
+                    <div class="custom_select">
+                        <button type="button" onclick="printDiv()" class="btn btn-outline-primary btn-radius mb-2">Print Reports</button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-3 offset-md-2 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="different_login animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                    <label  style="font-weight: 700;">Get Individual Followup Report for: </label>
+                    <div class="custom_select">
+                        <select class="form-control not_chosen" name = "type" id="dropdown_user">
+                            <option value=""> --- Select --- </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+            <div class="different_login animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                <div id="showtable">
+                    <table  class = "table_val" id="customers">
+                      </table>
+                </div>    
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+
+<script>
+
+function printDiv() { 
+			var divContents = document.getElementById("showtable").innerHTML; 
+			var a = window.open('', '', 'height=500, width=500'); 
+			a.document.write('<html>'); 
+			a.document.write('<body >'); 
+			a.document.write(divContents); 
+			a.document.write('</body></html>'); 
+			a.document.close(); 
+			a.print(); 
+		} 
+
+populateUserNames = () =>{
+    
+    $.ajax({
+        url: "http://184.73.254.81:8099/user/",
+        dataType: "json",
+        type: "post",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        success: function (data, textStatus, jQxhr) {
+            console.log(data)
+            var defID = "dropdown_user"
+            var $el = $("#"+String(defID));
+            $("#"+String(defID)+' option:gt(0)').remove();
+            $.each(data, function(i,item) {
+                $el.append($("<option></option>")
+                    .attr("value", item['name']).text(item['name']));
+            });
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        },
+    });
+}
+
+$( document ).ready(function() {
+    populateUserNames()
+    var values = ["Iframe (Document List)", "EOD Report",
+    "Sent for Apostle Attestation",
+    "Corrections Report",
+    "Walk-In Reports",
+    "SAC Reports",
+    "Reminders Urgent",
+    "Current Case Stage",
+    "Assigned for Case Study",
+    "Start Attestation Process",
+    "Closure Report"]
+
+    $('#dropdown option:gt(0)').remove();
+    var $el = $("#dropdown");
+    $.each(values, function(i,item) {
+        $el.append($("<option></option>")
+            .attr("value", item).text(item));
+    });
+});
+
+$("#dropdown").change(function(){
+    // your code here
+    // Switch case to add the values
+
+    switch($(this).val()) {
+    case "EOD Report":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Start Time"),
+            $('<th>').text("Client Name"),
+            $('<th>').text("Displosition"),
+            $('<th>').text("Remind"),
+            $('<th>').text("Remind_2"),
+            $('<th>').text("Urgent Reminder"),
+            $('<th>').text("Status and Reminder"),
+            $('<th>').text("Agent Name"),
+            $('</tr>')
+        );
+
+        // Need to know which values to be mapped
+
+        break;
+
+    case "Iframe (Document List)":
+        // code block
+        // List all document
+        
+        $(".table_val").empty()
+    
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Register"),
+            $('<th>').text("To Register"),
+            $('<th>').text("Document"),
+            $('<th>').text("Document of"),
+            $('<th>').text("Doc. Required"),
+            $('<th>').text("Doc. in Office"),
+            $('<th>').text("Place"),
+            $('<th>').text("Comment"),
+            $('</tr>')
+        );
+
+        // Get Document List
+
+        $.ajax({
+                url: "http://184.73.254.81:8099/document/",
+                dataType: "json",
+                type: "post",
+                crossDomain: true,
+                headers: {
+                            "Content-Type": "application/json"
+                        },
+                success: function (data, textStatus, jQxhr) {
+                    var count = 1
+                    $.each(data, function(i, item) {
+                        // if the client_id = id passed to Localstorage, then...
+                                var $tr = $(".table_val").append(
+                                    $('<tr>'),
+                                    $('<td>').text(parseInt(count)),
+                                    $('<td>').text(item.registration),
+                                    $('<td>').text(item.to_register),
+                                    $('<td>').text(item.document),
+                                    $('<td>').text(item.document_of),
+                                    $('<td>').text(item.doc_available),// doc required                                    
+                                    $('<td>').text(item.doc_in_office),    
+                                    $('<td>').text(item.place), // place
+                                    $('<td>').text(item.comment),
+                                    $('</tr>')
+                                ); 
+                            count++;
+                    });
+
+                    if(data === {})
+                        {console.log('empty')}
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                },
+            });
+        break;
+
+    case "Sent for Apostle Attestation":
+    $(".table_val").empty()
+        // code block
+    $(".table_val").append(
+        $('<tr>'),
+        $('<th>').text("Sr. No."),
+        $('<th>').text("Client Name"),   
+        $('<th>').text("Document"),
+        $('<th>').text("Document of"),
+        $('<th>').text("Name"),
+        $('<th>').text("Place"),
+        $('<th>').text("Document1"),
+        $('<th>').text("Apostle Date"),
+        $('<th>').text("Send to PT Date"),
+        $('</tr>')
+    );
+    var settings = {
+        "url": "http://184.73.254.81:8099/document/",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+                "Content-Type": "application/json"
+            }
+        };
+
+        $.ajax(settings).done(function (data) {
+            if(data === {})
+                {console.log('empty')}
+            
+                // Populate rows of table
+                var count = 1
+                $.each(data, function(i, item) {
+                    if(item.apostle_date != "None"){ // add checking for apostle date
+                            var $tr = $(".table_val").append(
+                                $('<tr>'),
+                                $('<td>').text(parseInt(count)),
+                                $('<td>').text(item.client_id),
+                                $('<td>').text(item.document),
+                                $('<td>').text(item.document_of),
+                                $('<td>').text(item.name),
+                                $('<td>').text(item.place),
+                                $('<td>').text(item.doc_available),
+                                $('<td>').text(item.apostle_date),
+                                $('<td>').text(item.send_to_pt_date),
+                                $('</tr>')
+                            ); 
+                        count++;
+                    }
+                });
+            
+        }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+
+
+        break;
+    case "Corrections Report":
+    $(".table_val").empty()
+        // code block
+
+        $(".table_val").append(
+        $('<tr>'),
+        $('<th>').text("Sr. No."),
+        $('<th>').text("Client Name"),   
+        $('<th>').text("Document"),
+        $('<th>').text("Document of"),
+        $('<th>').text("Name"),
+        $('<th>').text("Place"),
+        $('<th>').text("Doc Available"),
+        $('<th>').text("Doc in Office"),
+        $('<th>').text("SAC Date"),
+        $('<th>').text("Comment"),
+        $('</tr>')
+    );
+    var settings = {
+        "url": "http://184.73.254.81:8099/document/",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+                "Content-Type": "application/json"
+            }
+        };
+
+        $.ajax(settings).done(function (data) {
+            if(data === {})
+                {console.log('empty')}
+            
+                // Populate rows of table
+                var count = 1
+                $.each(data, function(i, item) {
+                    if(item.doc_in_office == "Correction Office"){ // add checking for apostle date
+                            var $tr = $(".table_val").append(
+                                $('<tr>'),
+                                $('<td>').text(parseInt(count)),
+                                $('<td>').text(item.client_id),
+                                $('<td>').text(item.document),
+                                $('<td>').text(item.document_of),
+                                $('<td>').text(item.name),
+                                $('<td>').text(item.place),
+                                $('<td>').text(item.doc_available),
+                                $('<td>').text(item.doc_in_office),
+                                $('<td>').text(item.sac_date),
+                                $('<td>').text(item.comment),
+                                $('</tr>')
+                            ); 
+                        count++;
+                    }
+                });
+            
+        }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+
+
+        break;
+    case "Walk-In Reports":
+    $(".table_val").empty()
+        // code block
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Client Name"),   
+            $('<th>').text("Disposition"),
+            $('<th>').text("Current Case Stage"),
+            $('<th>').text("Remind"),
+            $('<th>').text("Remind_2"),
+            $('<th>').text("Urgent Reminders"),
+            $('<th>').text("Start Time"),
+            $('<th>').text("Agent Name"),
+            $('</tr>')
+        );
+
+        // Need to know contents for it
+        break;
+    case "SAC Reports":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Client Name"),   
+            $('<th>').text("Document"),
+            $('<th>').text("Document of"),
+            $('<th>').text("Name"),
+            $('<th>').text("Place"),
+            $('<th>').text("Doc Available"),
+            $('<th>').text("Doc in Office"),
+            $('<th>').text("SAC Date"),
+            $('<th>').text("Comments"),
+            $('</tr>')
+        );
+    var settings = {
+        "url": "http://184.73.254.81:8099/document/",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+                "Content-Type": "application/json"
+            }
+        };
+
+        $.ajax(settings).done(function (data) {
+            if(data === {})
+                {console.log('empty')}
+            
+                // Populate rows of table
+                var count = 1
+                $.each(data, function(i, item) {
+                    if(item.sac_date != "None"){ // add checking for sac date
+                            var $tr = $(".table_val").append(
+                                $('<tr>'),
+                                $('<td>').text(parseInt(count)),
+                                $('<td>').text(item.client_id),
+                                $('<td>').text(item.document),
+                                $('<td>').text(item.document_of),
+                                $('<td>').text(item.name),
+                                $('<td>').text(item.place),
+                                $('<td>').text(item.doc_available),
+                                $('<td>').text(item.doc_in_office),
+                                $('<td>').text(item.sac_date),
+                                $('<td>').text(item.comment),
+                                $('</tr>')
+                            ); 
+                        count++;
+                    }
+                });
+            
+        }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+        break;
+    case "Reminders Urgent":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Name"),   
+            $('<th>').text("Urgent Reminders Count"),
+            $('</tr>')
+        );
+        // Insert List of all Users and Count No. of Urgent Reminders they have on them
+
+
+        break;
+    case "Current Case Stage":
+        // code block
+        $(".table_val").empty()
+    
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Name"),
+            $('<th>').text("Current Case Stage"),
+            $('</tr>')
+        );
+        var case_stages = [
+                    "URGENT Case Study - Wesley",
+                    "Birth Between 1962 to 1970",
+                   "Case Study Shared-Corrections on Client",
+                    "Case Study - Wesley",
+                    "Submitted Documents Pending Office",
+                    "Dead End",
+                    "Submitted Documents Pending Client",
+                    "Case Study Shared",
+                    "Pending Submission",
+                    "Pending Submission Due to Documents pending",
+                    "Urgent- Veena Only",
+                    "Initial Advance Paid",
+                    "Concluded Documents pending for next Process",
+                    "Will get Back",
+                    "Pending Submission Due to Fees",
+                    "Initial Refunded",
+                    "Sent to PT",
+                    "Case On Hold By Client",
+                    "Concluded",
+                    "Submitted",
+                    "Search Billing",
+                    "Search on",
+                    "Enquiry-Documents handed",
+                    "NA",
+                    "Case Draft Shared",
+                    "Enquiry-Walkin",
+                    "Not Interested",
+                    "Enquiry-Online",
+                    "Notary",
+                    "Case Review - Joshua",
+                    "Start Attestation",
+                    "Translation",
+                    "Collector",
+                    "A & T Bill Shared",
+                    "Case Study Shared-Corrections on Joshua",
+                    "Apostile"
+                    ]
+
+                    var count = 1
+                    $.each(case_stages, function(i, item) {
+                        console.log(item)
+                                var $tr = $(".table_val").append(
+                                    $('<tr>'),
+                                    $('<td>').text(parseInt(count)),
+                                    $('<td>').text(item),
+                                    $('<td>').text("Random No."),
+                                    $('</tr>')
+                                ); 
+                            count++;
+                    });
+        break;
+    case "Assigned for Case Study":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Client Name"),
+            $('<th>').text("Disposition"),
+            $('<th>').text("Start_time"),
+            $('<th>').text("Assigned By"),
+            $('</tr>')
+        );
+        break;
+    case "Start Attestation Process":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Client Name"),
+            $('<th>').text("Disposition"),
+            $('<th>').text("Start_time"),
+            $('<th>').text("Agent Name"),
+            $('</tr>')
+        );
+        break;
+    case "Closure Report":
+        // code block
+        $(".table_val").empty()
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Client Name"),
+            $('<th>').text("Initial Advance Paid Time"),
+            $('<th>').text("Closed By"),
+            $('</tr>')
+        );
+        break;
+    
+    default:
+        // code block
+        $(".table_val").empty()
+    }
+});
+
+
+$("#dropdown_user").change(function(){
+    // your code here
+    //$("#showtable").text("Changed to "+$(this).val())
+    // Switch case to add the values
+
+    $(".table_val").empty()
+    var check = $(this).val()
+    switch($(this).val()) {
+        case "":
+        // code block
+        // do nothing
+        
+        break;
+    
+    default:
+        // rest of the logic
+        // code block
+
+        // add table headers
+        $(".table_val").append(
+            $('<tr>'),
+            $('<th>').text("Sr. No."),
+            $('<th>').text("Date"),
+            $('<th>').text("Document Followup for "+$(this).val()),
+            $('</tr>')
+        );
+
+        // get user id where name = *** 
+        // get followups where name  = this val
+        var settings = {
+            "url": "http://184.73.254.81:8099/followup/",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            $.ajax(settings).done(function (data) {
+                console.log(data)
+                if(data === {})
+                    {console.log('empty')}
+                
+                    // Populate rows of table
+                    var count = 1
+                    $.each(data, function(i, item) {
+                        console.log(item)
+                        if(check == item.followup_for){
+                                var $tr = $(".table_val").append(
+                                    $('<tr>'),
+                                    $('<td>').text(parseInt(count)),
+                                    $('<td>').text(item.created_at),
+                                    $('<td>').text(item.followup_for),
+                                    $('</tr>')
+                                ); 
+                            count++;
+                        }
+                    });
+                
+            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+
+
+        // using that populate the rows of the table
+    }
+})
+
+</script>
+
+<!-- jquery-ui --> 
+<script src="assets/js/jquery-ui.js"></script> 
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- elevatezoom js -->
+<script src='assets/js/jquery.elevatezoom.js'></script> 
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+<!-- DatePicker js -->
+<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
+
+</body>
+</html>

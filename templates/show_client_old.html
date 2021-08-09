@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Add Document</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="assets/css/ico-moon.css" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="assets/css/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<!-- DatePicker CSS -->
+<link href="assets/css/datepicker.min.css" rel="stylesheet">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    </style>
+
+</head>
+
+<body>
+<!-- START HEADER -->
+<header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg"> 
+    	<a class="navbar-brand" href="index.html">
+            <!-- <h2 style="
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size:25px;
+        ">Logo</h2> -->
+        <img src="assets/logo.png"  height="80px" width="auto">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav attr-nav align-items-center">
+               
+                <li>
+                    <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                </li>
+                <!-- <li>
+                    <a class="nav-link page-scroll active" href="add_client.html" style="color:#000;">Add Client</a>
+                </li> -->
+                <!-- <li>
+                    <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                </li> -->
+
+                <li>
+                    <a class="nav-link page-scroll active" href="add_user.html" style="color:#000;">USer Details</a>
+                </li>
+                  <li>
+                      <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+                  </li>
+                
+                    <li><a href="index.html" class="nav-link search_trigger"><i class="ion-android-person"></i></a>
+                       
+                    </li>
+                    <li><a href="#" id="logout" class="nav-link search_trigger"><i class="ion-log-out" style="color: #000;font-size: 24px;"></i>&nbsp; Logout</a>
+                       
+                    </li>
+            </ul>
+    </nav>
+  </div>
+</header>
+<!-- END HEADER --> 
+
+<!-- Edit/view Client Data -->
+<section id="contact">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="field_form" style="box-shadow: 0 0 5px rgba(0,0,0,0.2);padding:20px;">
+                    <div class="row">
+                        <div class="col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">
+                            <div class="heading_s1 text-center" style="padding:27px;"> 
+                                <h2>Client Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                        <form method="post" id = "edit_client" name="edit_client">
+                        <div class="row">
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Client Name : <span class="asterisk-color">*</span></label>
+                                <input required="required" placeholder="Client Name" id="name1" class="form-control" name="name" type="text">
+                             </div>
+                             <div class="form-group col-lg-3 col-md-6">
+                              <label>Phone Number :<span class="asterisk-color">*</span></label>
+                              <input required="required" placeholder="Phone Number *" id="number1" class="form-control" name="number" type="phone">
+                           </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                <input required="required" placeholder=" Email id " id="email1" class="form-control" name="email" type="email">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Email id2 : <span class="asterisk-color">*</span></label>
+                                <input required="" placeholder="Email id2 " id="email_alt1" class="form-control" name="email_alt" type="email">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Client Location : <span class="asterisk-color">*</span></label>
+                                <input required="required" placeholder="Client Location " id="location1" class="form-control" name="location" type="search">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">First Contact Date : </label>
+                                <input placeholder="First Contact Date" class="form-control datepicker" id="date1" name="date" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Source : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="source1" name="source">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="Referrence">Referrence</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Referred By :</label>
+                                <input  placeholder="Referred By" id="referred" class="form-control" name="referred" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Process Type :</label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="process_type1" name="process_type">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="BB 1961 Registration">BB 1961 Registration</option>
+                                        <option value="Marriage Registration">Marriage Registration</option>
+                                        <option value="BA 1961 Registration">BA 1961 Registration</option>
+                                        <option value="Minor Birth Registration">Minor Birth Registration</option>
+                                        <option value="Divorce Registration">Divorce Registration</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">First Registration of : </label>
+                                <input placeholder="First Registration of " id="first_registration_of1" class="form-control" name="first_registration_of" type="text">
+                            </div>
+                           <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Lead Type : </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="lead_type1" name="lead_type">
+                                        <option value=""> --- Select ---</option>
+                                        <option value="Hot">Hot</option>
+                                        <option value="Cold">Cold</option>
+                                        <option value="Warm">Warm</option>
+                                    </select>
+                                </div>
+                            </div>
+                           <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Search Required :</label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="search_required1" name="search_required">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                          <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight:700;">Assigned To : </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="assigned_to1" name="assigned_to">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="1">Assigned To</option>
+                                        <option value="2">Assigned To</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                         <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Search Location : </label>
+                                <input  placeholder="Search Location" id="search_location1" class="form-control" name="search_location" type="search">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Search Taluka :</label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="search_taluka1" name="search_taluka">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="Bardez">Bardez</option>
+                                        <option value="Sattari">Sattari</option>
+                                        <option value="Bicholim">Bicholim</option>
+                                        <option value="Pernem">Pernem</option>
+                                        <option value="Ponda">Ponda</option>
+                                        <option value="Tiswadi">Tiswadi</option>
+                                        <option value="Salcette">Salcette</option>
+                                        <option value="Canacona">Canacona</option>
+                                        <option value="Quepem">Quepem</option>
+                                        <option value="Marmugao">Marmugao</option>
+                                        <option value="Sanguem">Sanguem</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Whatsapp Group Created : <span class="asterisk-color">*</span> </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="wa_group1" name="wa_group">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Whatsapp Group Name  : <span class="asterisk-color">*</span></label>
+                                <input required="required" placeholder="Whatsapp Group Name " id="wa_group_name1" class="form-control" name="wa_group_name" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Alternate Number : </label>
+                                <input  placeholder="Alternate Number" id="numner_alt1" class="form-control" name="number_alt" type="phone">
+                            </div>
+                          
+                             <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Address : <span class="asterisk-color">*</span></label>
+                                <input required="required" placeholder="Address" id="address1" class="form-control" name="address" type="address">
+                             </div>
+                           
+                            <div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" name="submit" value="Submit">Update</button>
+                            </div>
+                            <div class="col-lg-12">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                        </div>
+                    </form>		
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Edit/Add Document Section -->
+<section id="contact">
+	<div class="container-fluid">
+    	<div class="row">
+            <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="field_form" style="box-shadow: 0 0 5px rgba(0,0,0,0.2);padding:20px;">
+                    <div class="row">
+                        <div class="col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">
+                            <div class="heading_s1 text-center"  style="padding:27px;">
+                                <h2>Document Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                        <form method="post" name="add_edit_doc" id="add_edit_doc">
+                        <input type="hidden" id="client_id" name="client_id" value="">  
+                        <input type="hidden" id="submit_mode" name="submit_mode" value="">  
+                        <div class="row">
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Registration : </span></label>
+                                <input  placeholder="Registration" id="registration2" class="form-control" name="registration" type="text">
+                             </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">To Register : </label>
+                                <input  placeholder="To Register" id="to_register2" class="form-control" name="to_register" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Document : </label>
+                                <input  placeholder="Document" id="document2" class="form-control" name="document" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Document Of : </label>
+                                <input  placeholder="Document Of" id="document_of2" class="form-control" name="document_of" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Name : </label>
+                                <input  placeholder="Name" id="name2" class="form-control" name="name" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Place: </label>
+                                <input  placeholder="Place " id="place2" class="form-control" name="place" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;"> Date: </label>
+                                
+                                <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="date" id="date2" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Reg Date: </label>
+                                
+                                <input  placeholder="DD/MM/YYYY" class="form-control datepicker" id="registered_date2" name="registered_date" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                            	<label  style="font-weight: 700;">Doc Available : </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name = "doc_available" id = "doc_available2">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Origin">Origin</option>
+                                        <option value="Scan">Scan</option>
+                                        <option value="Photocopy">Photocopy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                            	<label  style="font-weight: 700;">Doc in Office : </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name= "doc_in_office" id= "doc_in_office2">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Origin">Origin</option>
+                                        <option value="Photocopy">Photocopy</option>
+                                        <option value="Scan">Scan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">SAC Date: </label>
+                                
+                                <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="sac_date" id="sac_date2" type="text">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                            	<label  style="font-weight: 700;">Billable: </label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name= "billable">
+                                        <option value=""> --- Select --- </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                       
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Attested Date: </label>
+                
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="a/t_date" id="a/t_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Translation Date: </label>
+                
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="translation_date" id="translation_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Notary Date: </label>
+                            
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="notary_date" id="notary_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Collector Date: </label>
+                           
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="collector_date" id="collector_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Apostle Date: </label>
+                            
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="apostle_date" id="apostle_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Sent To PT Date : </label>
+    
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="send_to_pt_date" id="send_to_pt_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Doc reached Pt: </label>
+                            <div class="custom_select">
+                                <select class="form-control not_chosen" name = "doc_reached_pt"  id = "doc_reached_pt2">
+                                    <option value=""> --- Select --- </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Received in PT: </label>
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="received_in_pt_date" id="received_in_pt_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Submitted Date: </label>
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="submitted_date" id="submitted_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Concluded Date: </label>
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="concluded_date" id="concluded_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Doc Issued Date: </label>
+                            <input  placeholder="DD/MM/YYYY" class="form-control datepicker" name="doc_issue_date" id="doc_issue_date2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Reg Bill: </label>
+                            <input  placeholder="Reg Bill " id="place" class="form-control" name="reg_bill" id="reg_bill2" type="text">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Submitted : </label>
+                            <div class="custom_select">
+                                <select class="form-control not_chosen" name = "submitted" id = "submitted2">
+                                    <option value=""> --- Select --- </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group col-md-3">
+                            <label  style="font-weight: 700;">Attachment: </label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="file" id="file2" aria-describedby="file">
+                                <label class="custom-file-label" for="file">Choose file</label>
+                              </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label  style="font-weight: 700;">Comment : </label>
+                            <textarea  placeholder="Message " name='comment' id="comment2" class="form-control" name="comment" rows="3"></textarea>
+                        </div>
+                       
+                       
+                            <div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" id="submitButton" name="submit" value="Submit">Save</button>
+                            </div>
+                            <div class="col-lg-12">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                        </div>
+                    </form>		
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- List Document -->
+<section class="small_pb overflow_hide">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">
+                <div class="heading_s1 text-center"> 
+                  <h2>Document Details</h2>
+                </div>
+               
+                <div class="row">
+                    <table id="customers">
+                                  
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- add reminder, add followup (No need to list them) -->
+<div class="container"> <div class="row">
+    <iframe src="reminder_followup.html" style="width: 100%;height: 800px;position:relative;top:50px;"></iframe>
+</div> </div>
+
+<!-- add logs and ... **New Block** -->
+
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+<script>
+
+document.getElementById("logout").onclick = function() {myFunction()};
+
+    function myFunction() {
+      localStorage.removeItem("data");
+      localStorage.removeItem("login");
+      location.href = 'index.html';
+    }
+
+
+(function ($) {
+    
+    // Get data to be filled in Display data
+    editClient = function(id){
+    //$('#editModal').modal('show');
+
+        $.ajax({
+            url: "http://184.73.254.81:8099/client/"+parseInt(id),
+            dataType: "json",
+            type: "post",
+            crossDomain: true,
+            headers: {
+                        "Content-Type": "application/json"
+                    },
+            success: function (data, textStatus, jQxhr) {
+                var re = /(\d{4})-(\d{2})-(\d{2}) (\d{2}:\d{2}:\d{2})/;
+                console.log(data)
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        if(key.includes('date')){
+                            if(key.includes('updated')) 
+                                continue;
+                            console.log(key, ": ",data[key])
+                            data[key].replace(data[key], '$3/$2/$1');  
+                        }      
+                    }
+                }
+                $.each(data, function(i, item) {                
+                    $('#'+String(i)+('1')).val(item==="None"?"":(item||""));
+                    $('#id_for_edit').val(id);
+                })
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+            },
+        });
+    }
+
+    $("#edit_client").submit(()=>{
+        // WHen edit client is submitted
+        event.preventDefault();
+        let myForm = document.getElementById('edit_client');
+        let formData = new FormData(myForm);
+        const value = Object.fromEntries(formData.entries());
+        var id = localStorage.client_id
+        var settings = {
+            "url": "http://184.73.254.81:8099/client/"+(id),
+            "method": "PUT",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify(value)
+            };
+
+            $.ajax(settings).done(function (data) {
+                console.log(data)
+                if(data === {})
+                    {console.log('empty')}
+        
+                if (typeof(Storage) !== "undefined") {
+                    alert('Client Updated')
+                    getData()
+                } else {
+                    console.log('Error')
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+            //$('#editModal').modal('hide');
+    });
+
+
+    if (typeof(Storage) !== "undefined") {
+        if( localStorage.client_id){
+            $('#client_id').val(localStorage.client_id)
+            $('#client_id1').val(localStorage.client_id) 
+            editClient(localStorage.client_id)  
+            $('#submit_mode').val("add")
+        }
+    } else { location.href = 'index.html';   // Sorry! No Web Storage support..
+        }
+    
+    $.fn.serializeFormJSON = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+    
+    deletefx = function (id){
+    var ans = confirm("Are you sure to delete Document Entry with id "+id+"?")
+    if(ans){
+        var settings = {
+            "url": "http://184.73.254.81:8099/document/"+String(id),
+            "method": "DELETE",
+            "timeout": 0,
+            };
+
+            $.ajax(settings).done(function (response) {
+                alert('Document Deleted')
+                getData()
+            });
+    }
+}
+
+
+editDocument = function(id){
+    event.preventDefault();
+    //$('#editModal').modal('show');
+    // Add Data for document here
+    $.ajax({
+        url: "http://184.73.254.81:8099/document/"+parseInt(id),
+        dataType: "json",
+        type: "post",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        success: function (data, textStatus, jQxhr) {
+            var re = /(\d{4})-(\d{2})-(\d{2}) (\d{2}:\d{2}:\d{2})/;
+            console.log(data)
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    if(key.includes('date')){
+                        if(key.includes('updated') || !data[key]) 
+                            continue;
+                        data[key].replace(data[key], '$3/$2/$1');  
+                    }      
+                }
+            }
+            $.each(data, function(i, item) { 
+                var key = i
+                if(key == "a/t_date")
+                    key = key.replace('/',"\\/")
+                
+                $('#'+String(key)+('2')).val(item==="None"?"":(item||""));
+                
+            });
+            $('#id_for_edit').val(id);
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+        },
+    });
+
+}
+
+    function getData(e){
+
+        $.ajax({
+            url: "http://184.73.254.81:8099/document/",
+            dataType: "json",
+            type: "post",
+            crossDomain: true,
+            headers: {
+                        "Content-Type": "application/json"
+                    },
+            success: function (data, textStatus, jQxhr) {
+
+                $('table').empty()
+
+                $('table').append(
+                    $('<tr>'),
+                    $('<th>').text("Sr. No."),
+                    $('<th>').text("Document - Click to Download"),
+                    $('<th>').text("Registration"),
+                    $('<th>').text("To Register"),
+                    $('<th>').text("Edit"),
+                    $('<th>').text("Delete"),
+                    $('</tr>')
+                );
+                var count = 0;
+                $.each(data, function(i, item) {
+                    // if the client_id = id passed to Localstorage, then...
+                    if (typeof(Storage) !== "undefined") {
+                        if( localStorage.client_id && localStorage.client_id == item.client_id){
+                            var $tr = $('table').append(
+                                $('<tr>'),
+                                $('<td>').text(parseInt(count)+1),
+                                $('<td>').html("<a href=\""+item.attachment+"\"><b>"+item.name+"</b></a>"),
+                                $('<td>').text(item.registration),
+                                $('<td>').text(item.to_register),
+                                $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" onclick=\"editDocument("+item.id+")\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
+                                $('<td>').html("<i class=\"ion-android-delete\" onclick=\"deletefx("+item.id+")\" style=\"font-size: 25px;color: #dc3545;\"></i>"),
+                                $('</tr>')
+                            ); 
+                        count++;
+                        }
+                    }
+                });
+
+                if(data === {})
+                    {console.log('empty')}
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+            },
+        });
+    }
+
+
+    function processForm(e) {
+        // check the format add or edit
+        event.preventDefault();
+        console.log('processing')
+        var check = $(this).serializeFormJSON()
+        var store = JSON.stringify(check)
+        if(check["submit_mode"] == "add"){
+            // add document fx()
+            localStorage.setItem("post", store);
+            var form_data = new FormData();                  
+            form_data.append('file', $('#file2').prop('files')[0]);
+            console.log(form_data)
+            $.ajax({
+                url: "http://184.73.254.81:8099/document/file",
+                type: 'POST',
+                data: form_data,
+                success: function (data) {
+                    if(data.hasOwnProperty('url')){
+
+                    if(!localStorage.post)
+                        return
+                    var op_data = JSON.stringify(localStorage.post)
+                    localStorage.removeItem("post");
+                    op_data1 = JSON.parse(op_data)
+                    op_data2 = JSON.parse(op_data1)
+                    op_data2['attachment'] = data.url
+                    var re = /(\d{2})\/(\d{2})\/(\d{4})/;
+                    for (var key in op_data2) {
+                        if (op_data2.hasOwnProperty(key)) {
+                            if(key.includes('date')){
+                                op_data2[key] = op_data2[key].replace(re, '$3-$1-$2');
+                            }
+                            op_data2[key] = op_data2[key] != "" ? op_data2[key] : null;
+                        }
+                    }
+                    $.ajax({
+                        url: "http://184.73.254.81:8099/document/",
+                        dataType: "json",
+                        type: "put",
+                        crossDomain: true,
+                        headers: {
+                                    "Content-Type": "application/json"
+                                },
+                        data: JSON.stringify(op_data2),
+                        success: function (data, textStatus, jQxhr) {
+                            if(data === {})
+                                console.log('empty')
+                            if(data.hasOwnProperty('error')){
+                                alert('Error')
+                            }
+                            alert('Document added')
+                            getData()
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                        },
+                    });
+
+                }else{
+                    console.log("URL not received")
+                    console.log(data)
+                }
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        }
+        else{
+            // edit document fx
+            editDoc()
+        }
+        e.preventDefault();
+    }
+
+    //$("#enq_edit").submit(()=>
+    function editDoc()
+    {
+        event.preventDefault();
+        let myForm = document.getElementById('add_edit_doc');
+        let formData = new FormData(myForm);
+        const value = Object.fromEntries(formData.entries());
+        var id = localStorage.client_id
+        var re = /(\d{2})\/(\d{2})\/(\d{4})/;
+        for (var key in value) {
+            if (value.hasOwnProperty(key)) {
+                if(key.includes('date')){
+                    value[key] = value[key].replace(re, '$3-$1-$2');
+                }
+            }
+        }
+
+        if($("#file1").val()){
+            // File is uploaded, call FX to get URL
+            var form_data = new FormData();                  
+            //form_data.append('file', $('#file1').prop('files')[0]);
+            form_data.append('file', $('#file1')[0].files);
+            console.log(form_data)
+            console.log("file fetched")
+            try{
+            // $.ajax({
+            //     url: "http://184.73.254.81:8099/document/file",
+            //     type: 'POST',
+            //     data: form_data,
+            //     success: function (data0) {
+            //         value["attachment"] = data0.url
+            //         var settings = {
+            //             "url": "http://184.73.254.81:8099/document/"+(id),
+            //             "method": "PUT",
+            //             "timeout": 0,
+            //             "headers": {
+            //                 "Content-Type": "application/json"
+            //             },
+            //             "data": JSON.stringify(value)
+            //             };
+
+            //             $.ajax(settings).done(function (data1) {
+            //                 console.log(data1)
+            //                 if(data1 === {})
+            //                     {console.log('empty')}
+                    
+            //                 if (typeof(Storage) !== "undefined") {
+            //                     alert('Document Updated')
+            //                     getData()
+            //                 } else {
+            //                     console.log('Error')
+            //                 }
+            //             }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+            //     }
+            // });
+
+            var settings1 = {
+                url: "http://184.73.254.81:8099/document/file",
+                type: 'POST',
+                data: form_data,
+            };
+            $.ajax(settings).done(function (data0) {
+                value["attachment"] = data0.url
+                    var settings = {
+                        "url": "http://184.73.254.81:8099/document/"+(id),
+                        "method": "PUT",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify(value)
+                        };
+
+                        $.ajax(settings).done(function (data1) {
+                            console.log(data1)
+                            if(data1 === {})
+                                {console.log('empty')}
+                    
+                            if (typeof(Storage) !== "undefined") {
+                                alert('Document Updated')
+                                getData()
+                            } else {
+                                console.log('Error')
+                            }
+                        }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+
+
+        }
+        catch(err){
+            console.log(err)
+            console.log('Error in the code')
+            
+        }
+            
+        }
+        else{
+            try{
+            var settings = {
+                "url": "http://184.73.254.81:8099/document/"+(id),
+                "method": "PUT",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify(value)
+                };
+
+                $.ajax(settings).done(function (data) {
+                    console.log(data)
+                    if(data === {})
+                        {console.log('empty')}
+            
+                    if (typeof(Storage) !== "undefined") {
+                        alert('Document Updated')
+                        getData()
+                    } else {
+                        console.log('Error')
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+            }
+            catch(err){
+                console.log(err)
+                console.log('Error in the code')
+            }
+        }
+        
+        $('#editModal').modal('hide');
+    }
+    //);
+
+    $("#add_edit_doc").submit(processForm);
+    getData()
+})(jQuery);
+
+
+
+</script>
+<!-- jquery-ui --> 
+<script src="assets/js/jquery-ui.js"></script> 
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- elevatezoom js -->
+<script src='assets/js/jquery.elevatezoom.js'></script> 
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+<!-- DatePicker js -->
+<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
+
+</body>
+</html>

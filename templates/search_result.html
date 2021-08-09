@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Search Result</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="assets/css/ico-moon.css" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="assets/css/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<!-- DatePicker CSS -->
+<link href="assets/css/datepicker.min.css" rel="stylesheet">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    </style>
+
+</head>
+
+<body>
+<!-- START HEADER -->
+<header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg"> 
+    	<a class="navbar-brand" href="index.html">
+            <!-- <h2 style="
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size:25px;
+        ">Logo</h2> -->
+        <img src="assets/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav attr-nav align-items-center">
+               
+                <li>
+                    <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                </li>
+                <!-- <li>
+                    <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                </li> -->
+                <li>
+                    <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+                </li>
+
+                    <li><a href="add_client.html" class="nav-link search_trigger"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> Add Client</button></a></li>
+                    <!-- <li><a href="reminder_followup.html" class="nav-link search_trigger"><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li> -->
+                    <!-- <li><a href="index.html" class="nav-link search_trigger"><i class="ion-android-person"></i></a> -->
+                       
+                    </li>
+                    <li><a href="index.html" id="logout" class="nav-link search_trigger"><i class="ion-log-out" style="color: #000;font-size: 24px;"></i>&nbsp;  Logout</a>
+                       
+                    </li>
+            </ul>
+    </nav>
+  </div>
+</header>
+<!-- END HEADER --> 
+  <!-- Show Client Table Section -->
+  <section class="small_pb overflow_hide">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">
+                <div class="heading_s1 text-center"> 
+                  <h2>Client Details</h2>
+                </div>
+               
+                <div class="row">
+                    <table id="customers">
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Edit Client Data Modal Section -->
+<section class="small_pb">
+    <div class="container">
+        <div class="row mb-md-5 mb-3">
+            <div class="col-md-12">
+                <!-- Modal -->
+                <div id = "editModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: 600;color: #8c8888;">Edit Client Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <form method="post" name="enq_edit" id ="enq_edit">
+                      <div class="modal-body">
+                          
+                            <div class="row">
+                                  <input type="hidden" id="id_for_edit" name="id_for_edit" value="">
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Client Name : <span class="asterisk-color">*</span></label>
+                                    <input  placeholder="Client Name" id="name1" class="form-control" name="name" type="text">
+                                 </div>
+                                 <div class="form-group col-lg-3 col-md-6">
+                                  <label>Phone Number * :</label>
+                                  <input  placeholder="Phone Number *" id="number1" class="form-control" name="number" type="phone">
+                               </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                    <input  placeholder=" Email id " id="email1" class="form-control" name="email" type="email">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Email id2 : <span class="asterisk-color">*</span></label>
+                                    <input  placeholder="Email id2" id="email_alt1" class="form-control" name="email_alt" type="email">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Client Location : <span class="asterisk-color">*</span></label>
+                                    <input required="" placeholder="Client Location " id="location1" class="form-control" name="location" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">First Contact Date :</label>
+                                    <input placeholder="First Contact Date " class="form-control datepicker" id = "first_contact_date1" name="first_contact_date" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Source : <span class="asterisk-color">*</span></label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="source1" name = "source">
+                                          <option value=""> --- Select --- </option>
+                                          <option value="Facebook">Facebook</option>
+                                          <option value="Instagram">Instagram</option>
+                                          <option value="Referrence">Referrence</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Referred By : </label>
+                                    <input placeholder="Client Location " id="referred_by1" class="form-control" name="referred_by" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Process Type : </label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="process_type1" name = "process_type">
+                                          <option value=""> --- Select --- </option>
+                                          <option value="BB 1961 Registration">BB 1961 Registration</option>
+                                          <option value="Marriage Registration">Marriage Registration</option>
+                                          <option value="BA 1961 Registration">BA 1961 Registration</option>
+                                          <option value="Minor Birth Registration">Minor Birth Registration</option>
+                                          <option value="Divorce Registration">Divorce Registration</option>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">First Registration of :</label>
+                                    <input placeholder="First Registration of " id="first_registration_of1" class="form-control" name="first_registration_of" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Lead Type : </label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="lead_type1" name="lead_type">
+                                          <option value=""> --- Select ---</option>
+                                          <option value="Hot">Hot</option>
+                                          <option value="Cold">Cold</option>
+                                          <option value="Warm">Warm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Search Required :</label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="search_required1" name= "search_required">
+                                          <option value=""> --- Select --- </option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label style="font-weight: 700;">Assigned To :</label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id = "assign_to1" name= "assign_to">
+                                            <option value="">Assigned To</option>
+                                            <option value="1">Assigned To</option>
+                                            <option value="2">Assigned To</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">Search Location : </label>
+                                    <input  placeholder="Search Location" id="search_location1" class="form-control" name="search_location" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">Search Taluka :</label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="seach_taluka1" name="search_taluka">
+                                          <option value=""> --- Select --- </option>
+                                          <option value="Bardez">Bardez</option>
+                                          <option value="Sattari">Sattari</option>
+                                          <option value="Bicholim">Bicholim</option>
+                                          <option value="Pernem">Pernem</option>
+                                          <option value="Ponda">Ponda</option>
+                                          <option value="Tiswadi">Tiswadi</option>
+                                          <option value="Salcette">Salcette</option>
+                                          <option value="Canacona">Canacona</option>
+                                          <option value="Quepem">Quepem</option>
+                                          <option value="Marmugao">Marmugao</option>
+                                          <option value="Sanguem">Sanguem</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">WA Group Created : <span class="asterisk-color">*</span> </label>
+                                    <div class="custom_select">
+                                        <select class="form-control not_chosen" id="wa_group1" name = "wa_group">
+                                          <option value=""> --- Select --- </option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">WA Group Name  : <span class="asterisk-color">*</span></label>
+                                    <input  placeholder="Search Location " id="wa_group_name1" class="form-control" name="wa_group_name" type="text">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">Alternate Number :</label>
+                                    <input placeholder="Alternate Number" id="number_alt1" class="form-control" name="number_alt" type="phone">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <label  style="font-weight: 700;">Address : <span class="asterisk-color">*</span></label>
+                                    <input  placeholder="Address*" id="address1" class="form-control" name="address" type="text">
+                                 </div>
+                               
+                               
+                                <div class="col-lg-12">
+                                    <div id="alert-msg" class="alert-msg text-center"></div>
+                                </div>
+                            </div>	
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                        <button type="submit" id="editChanges" class="btn btn-default">Save changes</button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+
+<script>
+
+    document.getElementById("logout").onclick = function() {localStorage.removeItem("data");
+          localStorage.removeItem("login");
+          location.href = 'index.html';};
+          
+    function redirection(id){
+        if(!id)
+            return
+        localStorage.setItem("client_id", id);
+        location.href = 'document.html';
+    }
+
+        (function ($) {
+        // get localstorage
+        // if found print on the screen or alert
+        
+        if (typeof(Storage) !== "undefined") {
+          // Code for localStorage/sessionStorage.
+          if( localStorage.login &&  localStorage.data){
+              // print data
+              var jsonop = JSON.parse(localStorage.data)
+              console.log("Logged in")
+              // check for search results:
+              if( localStorage.search_post ){
+                  //get search Post, clear it
+                  var jsonop = localStorage.search_post
+                  localStorage.removeItem("search_post");
+                    // convert to Object and Use it
+                    var post_data = JSON.parse(jsonop)
+                    // remove all which are empty
+                    $.each(post_data, function(key, value){
+                        if (value === "" || value === null){
+                            delete post_data[key];
+                        }
+                    });
+
+                    console.log( JSON.stringify(post_data))
+              }
+              else{
+                  console.log("no Search Parameters")
+              }
+            }
+            else{
+              location.href = 'index.html';
+          }
+        } else {
+          location.href = 'index.html';
+          // Sorry! No Web Storage support..
+        }
+    
+        $.fn.serializeFormJSON = function () {
+    
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    
+    deletefx = function (id){
+        var ans = confirm("Are you sure to delete Client with id "+id+"?")
+        if(ans){
+            var settings = {
+                "url": "http://184.73.254.81:8099/client/"+String(id),
+                "method": "DELETE",
+                "timeout": 0,
+                };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response)
+                alert('Client Deleted')
+                getData()
+            });
+        }
+    }
+
+    populateUserNames = () =>{
+    
+        $.ajax({
+            url: "http://184.73.254.81:8099/user/",
+            dataType: "json",
+            type: "post",
+            crossDomain: true,
+            headers: {
+                        "Content-Type": "application/json"
+                    },
+            success: function (data, textStatus, jQxhr) {
+                console.log(data)
+                $.each(["assign_to","assign_to1","urgent_reminders","remind","remind_2"], function(i,defID) {
+                    var $el = $("#"+String(defID));
+                    $("#"+String(defID)+' option:gt(0)').remove();
+                    $.each(data, function(i,item) {
+                        $el.append($("<option></option>")
+                            .attr("value", item['name']).text(item['name']));
+                    });
+                });
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+              console.log(errorThrown);
+            },
+        });
+    }
+    
+    function checkData(post_data, item){
+        
+        
+        return true
+    }
+    
+    function getData(){
+        // Get Data from client using the Filters sent
+        // console.log( JSON.stringify(post_data))
+        $.ajax({
+            url: "http://184.73.254.81:8099/client/",
+            dataType: "json",
+            type: "post",
+            crossDomain: true,
+            headers: {
+                        "Content-Type": "application/json"
+                    },
+            success: function (data, textStatus, jQxhr) {
+                console.log(data)
+                $('table').empty()
+    
+                $('table').append(
+                    $('<tr>'),
+                    $('<th>').html("Master ID"),
+                    $('<th>').text("Client Name - Click For Documents"),
+                    $('<th>').text("Email ID"),
+                    $('<th>').text("Whatsapp Group Name"),
+                    $('<th>').text("Edit"),
+                    $('<th>').text("Delete"),
+                    $('</tr>')
+                );
+
+                // adding client List to search Case Owner
+                
+                var $el = $("#case_owner");
+                $('#case_owner option:gt(0)').remove();
+
+                // using post data, filter it. 
+    
+                $.each(data, function(i, item) {
+                    $el.append($("<option></option>")
+                        .attr("value", item['name']).text(item['name']));
+                    var $tr = $('table').append(
+                        $('<tr>'),
+                        $('<td>').html( parseInt(i) +1),
+                        $('<td>').html("<a href=\"#\" onclick = \"redirection("+item.id+")\"> <b>"+item.name+"</b></a>"),
+                        $('<td>').text(item.email),
+                        $('<td>').text(item.wa_group_name),
+                        $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" onclick = \"editClient("+item.id+")\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
+                        $('<td>').html("<i class=\"ion-android-delete\" onclick=\"deletefx("+item.id+")\" style=\"font-size: 25px;color: #dc3545;\"></i>"),
+                        $('</tr>')
+                    ); 
+                });
+              if(data === {})
+              {console.log('empty')}
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+              console.log(errorThrown);
+            },
+          });
+    }
+
+     editClient = function(id){
+        $('#editModal').modal('show');
+
+        $.ajax({
+            url: "http://184.73.254.81:8099/client/"+parseInt(id),
+            dataType: "json",
+            type: "post",
+            crossDomain: true,
+            headers: {
+                        "Content-Type": "application/json"
+                    },
+            success: function (data, textStatus, jQxhr) {
+                var re = /(\d{4})-(\d{2})-(\d{2}) (\d{2}:\d{2}:\d{2})/;
+                console.log(data)
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        if(key.includes('date')){
+                            if(key.includes('updated')) 
+                                continue;
+                            console.log(key, ": ",data[key])
+                            data[key].replace(data[key], '$3/$2/$1');  
+                        }      
+                    }
+                }
+                $.each(data, function(i, item) {                
+                    $('#'+String(i)+('1')).val(item==="None"?"":(item||""));
+                    $('#id_for_edit').val(id);
+                })
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+              console.log(errorThrown);
+            },
+        });
+    }
+
+     $("#enq_edit").submit(()=>{
+        event.preventDefault();
+        let myForm = document.getElementById('enq_edit');
+        let formData = new FormData(myForm);
+        const value = Object.fromEntries(formData.entries());
+        var id = value["id_for_edit"]
+        var settings = {
+            "url": "http://184.73.254.81:8099/client/"+(id),
+            "method": "PUT",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify(value)
+            };
+
+            $.ajax(settings).done(function (data) {
+                console.log(data)
+                if(data === {})
+                    {console.log('empty')}
+        
+                if (typeof(Storage) !== "undefined") {
+                    alert('Client Updated')
+                    getData()
+                } else {
+                    console.log('Error')
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
+            $('#editModal').modal('hide');
+     });
+
+
+    function deleteForm(id){
+        $.ajax({
+            url: "http://184.73.254.81:8099/client/"+parseInt(id),
+            type: "DELETE",
+            crossDomain: true,
+            success: function (data, textStatus, jQxhr) {
+                console.log(data)
+                alert('Client Deleted')
+                getData()
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+              console.log(errorThrown);
+            },
+          });
+    }
+        getData()
+        populateUserNames();
+      })(jQuery);
+        
+
+</script>
+<!-- jquery-ui --> 
+<script src="assets/js/jquery-ui.js"></script> 
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- elevatezoom js -->
+<script src='assets/js/jquery.elevatezoom.js'></script> 
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+<!-- DatePicker js -->
+<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
+
+</body>
+</html>

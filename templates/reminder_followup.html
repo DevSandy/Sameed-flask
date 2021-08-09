@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Reminders and Follow Ups</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="assets/css/ico-moon.css" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="assets/css/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
+<!-- DatePicker CSS -->
+<link href="assets/css/datepicker.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- START HEADER -->
+<!-- <header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg"> 
+    	<a class="navbar-brand" href="dashboard.html">
+            <h2 style="
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size:25px;
+        ">Logo</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+               
+                <li>
+                    <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                </li>
+                
+                <li>
+                    <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+                </li>
+                <ul class="navbar-nav attr-nav align-items-center">
+                    <li><a href="add_client.html" class="nav-link search_trigger"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> Add Client</button></a></li>
+                    <li><a href="reminder_followup.html" class="nav-link search_trigger"><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li>
+                    <li><a href="index.html" class="nav-link search_trigger"><i class="ion-android-person"></i></a></li>
+    
+                   
+                    <li>
+                        <a href="javascript:void(0);" class="nav-link search_trigger"><i class="ion-ios-search-strong"></i></a>
+                        <div class="search-overlay">
+                            <span class="close-search"><i class="ion-ios-close-empty"></i></span>
+                            <div class="search_wrap">
+                                <form>
+                                    <div class="row">
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Master Id: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Master Id " id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="number">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Phone: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Phone Number" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="phone">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Last Disposition: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Client Name: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Client Name" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="number">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Email Address: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Email Address" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="email">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Search Location: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Search Location" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">WhatsApp Group Name: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="WhatsApp Group Name" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Taluka to Search: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Case Status: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Enquiry Follow Up: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Enquiry Follow Up" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Terms Email Send: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Case Owner: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Current Case Stage: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Remind: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Remind 2: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Urgent Reminders: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Joshua: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Correction start Date : <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Correction Start Date" class="form-control datepicker" name="date" type="text">
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Taluka: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Veena: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Wesley: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Billing: <span class="asterisk-color">*</span></label>
+                                        <div class="custom_select">
+                                            <select class="form-control not_chosen">
+                                                <option value="">Facebook</option>
+                                                <option value="1">Instagram</option>
+                                                <option value="2">Phone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-6">
+                                        <label style="font-weight: 700;color:#fff;">Follow Up for Jyoti: <span class="asterisk-color">*</span></label>
+                                        <input required="required" placeholder="Follow Up for Jyoti" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" id="submitButton" name="submit" value="Submit"><i class="ion-ios-search-strong"></i> Search</button>
+                                    </div>
+                                       
+                                    </div>
+                                    
+                            	</form>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="index.html" class="nav-link search_trigger"><i class="ion-log-out" style="color: #000;font-size: 24px;"></i></a>
+                       
+                    </li>
+                </ul>
+                
+                
+            </ul>
+    </nav>
+</div>
+</header> -->
+
+<!-- END HEADER --> 
+<section id="contact">
+	<div class="container">
+    	<div class="row">
+            <div class="col-lg-6 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="different_login animation animated fadeInUp light_gray_bg" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                    <span style="font-weight:700;">Reminders
+                    <i class="ion-ios-bell" style="font-size:25px"></i></span>
+                </div>
+                <div class="field_form icon_box icon_box_style_5">
+                        <form method="post" name="enq_reminder" id="enq_reminder">
+                        <div class="row">
+                            <input type="hidden" id="user_id" name="user_id" value="">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Remind : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name='remind' id="remind">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Person 2">Person 2</option>
+                                    	<option value="Person 3">Person 3</option>
+                                    </select>
+                                </div>
+                             </div>
+                            
+                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Current Case Stage : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name="current_case_stage" id = "current_case_stage">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Stage 2">Stage 2</option>
+                                    	<option value="Stage 3">Stage 3</option>
+                                    </select>
+                                </div>
+                             </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Closed By :</label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name="closed_by" id="closed_by">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Person 2">Person 2</option>
+                                    	<option value="Person 3">Person 3</option>
+                                    </select>
+                                </div>
+                             </div>
+                             <div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" id="submitButton" name="submit" value="Submit">Save</button>
+                            </div>
+                        </div>
+                    </form>		
+                    </div>
+                   
+
+            </div>
+            <div class="col-lg-6 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="different_login animation animated fadeInUp light_gray_bg" data-animation="fadeInUp" data-animation-delay="0.7s" style="animation-delay: 0.7s; opacity: 1;">
+                    <span style="font-weight:700;">Follow Ups <i class="ion-android-calendar" style="
+                        font-size:25px;"></i></span>
+                </div>
+                <div class="field_form icon_box icon_box_style_5">
+                        <form method="post" name="enq_followup" id="enq_followup">
+                        <input type="hidden" id="user_id" name="user_id" value=""> 
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Follow Up For : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name = "followup_for" id="followup_for">
+                                    	<option value=""> --- Select --- </option>
+                                    	<option value="Person 2">Person 2</option>
+                                    	<option value="Person 3">Person 3</option>
+                                    </select>
+                                </div>
+                             </div>
+                            <!--<div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" id="submitButton" name="submit" value="Submit">Submit</button>
+                            </div>-->
+                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Follow Up Type : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" name = "type">
+                                        <option value="Enquiry clients closures">Enquiry clients closures</option>
+                                        <option value="Pending documents to be submitted by client">Pending documents to be submitted by client</option>
+                                        <option value="Searches pending">Searches pending</option>
+                                        <option value="Corrections pending by office">Corrections pending by office</option>
+                                        <option value="corrections pending by client">corrections pending by client</option>
+                                        <option value="Pending payments by client">Pending payments by client</option>
+                                        <option value="Documents sent for attestation">Documents sent for attestation</option>
+                                    </select>
+                                </div>
+                             </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Follow Up Date: </label>
+                                <input required="" placeholder="Follow Up Date" id = "date" class="form-control datepicker" name="date" type="text">
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label  style="font-weight: 700;">Comments: </span></label>
+                                <!-- <input required="required" placeholder="Follow Up Date" class="form-control datepicker" name="date" type="text"> -->
+                                <input required="" placeholder="Comments" id="comments" class="form-control" name="comments" type="text">
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" id="submitButton" name="submit" value="Submit">Save</button>
+                        </div>
+                    </form>		
+                    </div>
+                   
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+<script>
+
+
+// on click, upload to reminder
+
+    $.fn.serializeFormJSON = function () {
+
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+
+    populateUserNames = () =>{
+    console.log("populating ")
+    
+    $.ajax({
+        url: "http://184.73.254.81:8099/user/",
+        dataType: "json",
+        type: "post",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        success: function (data, textStatus, jQxhr) {
+            console.log(data)
+
+                $.each(['remind', 'closed_by' ,'followup_for'], function( index, defID ) {
+                    var $el = $("#"+String(defID));
+                    $("#"+String(defID)+' option:gt(0)').remove();
+                    $.each(data, function(i,item) {
+                        $el.append($("<option></option>")
+                            .attr("value", item['name']).text(item['name']));
+                    });
+                });
+
+                $.each(['current_case_stage'], function( index, defID ) {
+                    var $el = $("#"+String(defID));
+                    $("#"+String(defID)+' option:gt(0)').remove();
+                    //
+                    var case_stages = [
+                    "URGENT Case Study - Wesley",
+                    "Birth Between 1962 to 1970",
+                   "Case Study Shared-Corrections on Client",
+                    "Case Study - Wesley",
+                    "Submitted Documents Pending Office",
+                    "Dead End",
+                    "Submitted Documents Pending Client",
+                    "Case Study Shared",
+                    "Pending Submission",
+                    "Pending Submission Due to Documents pending",
+                    "Urgent- Veena Only",
+                    "Initial Advance Paid",
+                    "Concluded Documents pending for next Process",
+                    "Will get Back",
+                    "Pending Submission Due to Fees",
+                    "Initial Refunded",
+                    "Sent to PT",
+                    "Case On Hold By Client",
+                    "Concluded",
+                    "Submitted",
+                    "Search Billing",
+                    "Search on",
+                    "Enquiry-Documents handed",
+                    "NA",
+                    "Case Draft Shared",
+                    "Enquiry-Walkin",
+                    "Not Interested",
+                    "Enquiry-Online",
+                    "Notary",
+                    "Case Review - Joshua",
+                    "Start Attestation",
+                    "Translation",
+                    "Collector",
+                    "A & T Bill Shared",
+                    "Case Study Shared-Corrections on Joshua",
+                    "Apostile"
+                    ]
+                    $.each(case_stages, function(i,item) {
+                        $el.append($("<option></option>")
+                            .attr("value", item).text(item));
+                    });
+                });
+
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        },
+    });
+}
+
+
+function getData(e){
+
+    $.ajax({
+        url: "http://184.73.254.81:8099/reminder/",
+        dataType: "json",
+        type: "post",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        success: function (data, textStatus, jQxhr) {
+            // Clear table
+            populateUserNames();
+            console.log('Done')
+            $('table').empty()
+
+            $('table').append(
+                $('<tr>'),
+                $('<th>').text("Sr. No."),
+                $('<th>').text("Client Name"),
+                $('<th>').text("Email ID"),
+                $('<th>').text("Whatsapp Group Name"),
+                $('<th>').text("Edit"),
+                $('<th>').text("Delete"),
+                $('</tr>')
+            );
+
+            $.each(data, function(i, item) {
+                console.log(data)
+                var $tr = $('table').append(
+                    $('<tr>'),
+                    $('<td>').text(i),
+                    $('<td>').html("<a href=\"#\" onclick = \"redirection("+item.id+")\">"+item.name+"</a>"),
+                    $('<td>').text(item.email),
+                    $('<td>').text(item.wa_group_name),
+                    $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
+                    $('<td>').html("<a href=\"#\"><i class=\"ion-android-delete\" style=\"font-size: 25px;color: #dc3545;\"></i></a>"),
+                    $('</tr>')
+                ); 
+            
+            });
+
+          if(data === {})
+          {console.log('empty')}
+            // add multi table generatio
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        },
+      });
+
+    e.preventDefault();
+}
+
+    function processForm(e) {
+        var store = JSON.stringify($(this).serializeFormJSON())
+        var op_data = JSON.stringify(store)
+        op_data1 = JSON.parse(op_data)
+        op_data2 = JSON.parse(op_data1)
+        var user_id = JSON.parse(localStorage.data)
+        op_data2['user_id'] = user_id.user_id.id
+        console.log( JSON.stringify(op_data2))
+                
+      $.ajax({
+        url: "http://184.73.254.81:8099/reminder/",
+        dataType: "json",
+        type: "put",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        //data: JSON.stringify($(this).serializeFormJSON()),
+        data: JSON.stringify(op_data2),
+        success: function (data, textStatus, jQxhr) {
+          if(data === {})
+          {console.log('empty')}
+
+          if (typeof(Storage) !== "undefined") {
+              console.log(data)
+            alert('Reminder added')
+            window.top.location.reload()
+            //getData()
+            } else {
+            // Sorry! No Web Storage support..
+            }
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        },
+      });
+
+      e.preventDefault();
+    }
+
+    function processFormFollowup(e) {
+        var store = JSON.stringify($(this).serializeFormJSON())
+        var op_data = JSON.stringify(store)
+        op_data1 = JSON.parse(op_data)
+        op_data2 = JSON.parse(op_data1)
+        var user_id = JSON.parse(localStorage.data)
+        for (var key in op_data2) {
+            if (op_data2.hasOwnProperty(key)) {
+                if(key == 'date'){
+                    var parts =op_data2[key].split('/');
+                    op_data2[key] = parts[2]+'-'+parts[1]+'-'+parts[0]
+                }
+            }
+        }
+        op_data2['user_id'] = user_id.user_id.id
+        console.log( JSON.stringify(op_data2))
+
+                
+      $.ajax({
+        url: "http://184.73.254.81:8099/followup/",
+        dataType: "json",
+        type: "put",
+        crossDomain: true,
+        headers: {
+                    "Content-Type": "application/json"
+                },
+        data: JSON.stringify(op_data2),
+        success: function (data, textStatus, jQxhr) {
+            console.log(data)
+          if(data === {})
+          {console.log('empty')}
+
+          if (typeof(Storage) !== "undefined") {
+            alert('Followup added')
+            window.top.location.reload()
+            //getData()
+            } else {
+            // Sorry! No Web Storage support..
+            }
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        },
+      });
+
+      e.preventDefault();
+    }
+
+    // once submitted, 
+    // push to API
+    $("#enq_reminder").submit(processForm);
+    $("#enq_followup").submit(processFormFollowup);
+    if (typeof(Storage) !== "undefined") {
+        if( localStorage.user_id && localStorage.user_id.id)
+        {
+            $('#user_id').val(localStorage.user_id.id)   
+        }
+    } 
+    populateUserNames()
+
+
+</script>
+<!-- jquery-ui --> 
+<script src="assets/js/jquery-ui.js"></script> 
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- elevatezoom js -->
+<script src='assets/js/jquery.elevatezoom.js'></script> 
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+<!-- DatePicker js -->
+<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
+
+</body>
+</html>
