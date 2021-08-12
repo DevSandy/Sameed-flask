@@ -102,7 +102,7 @@
 <header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
     <div class="container">
       <nav class="navbar navbar-expand-lg"> 
-          <a class="navbar-brand" href="dashboard.html">
+          <a class="navbar-brand" href="dashboard">
               <!-- <h2 style="
               font-weight: 600;
               text-transform: uppercase;
@@ -115,7 +115,7 @@
               <ul class="navbar-nav">
                   <ul class="navbar-nav attr-nav align-items-center">
                     <li>
-                        <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                        <a class="nav-link page-scroll active" href="dashboard" style="color:#000;">Dashboard</a>
                     </li>
                     <!-- <li>
                         <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
@@ -124,7 +124,7 @@
                       <a class="nav-link page-scroll active" href="adduser" style="color:#000;">USer Details</a>
                   </li>
                     <li>
-                        <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+{#                        <a class="nav-link page-scroll active" href="customreport" style="color:#000;">Custom Report</a>#}
                     </li>
                       <li><a href="addclient" class="nav-link"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> New</button></a></li>
                       <!-- <li><a href="reminder_followup.html" class="nav-link "><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li>
@@ -307,23 +307,47 @@
           </div>
       </div>
   </section>
-  <!-- Show Client Table Section -->
-  <section class="small_pb overflow_hide">
+
+<section class="small_pb overflow_hide">
       <div class="container">
           <div class="row align-items-center">
               <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">
-                  <div class="heading_s1 text-center"> 
+                  <div class="heading_s1 text-center">
                     <h2>Client Details</h2>
                   </div>
-                 
+
                   <div class="row">
-                      <table id="customers">
-                        </table>
+                      <table border = 1>
+
+    <tr height = "50px" style="background: #0b0b0b;text-align: center">
+       <th style="color: white;padding: 20px"> {{ "Master ID" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Client Name - Click For Documents" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Email ID" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Whatsapp Group Name" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Edit" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Delete" }} </th>
+    </tr>
+    {% for id in result %}
+
+        <tr height = "50px" style="text-align: center">
+       <td> {{ id.idno }} </td>
+       <td> {{ id.name }} </td>
+       <td> {{ id.email }} </td>
+       <td> {{ id.wpgroup }} </td>
+       <td onclick="window.location='/editclients?id={{ id.idno }}'"> <a ><i class="fa fa-edit" ></i></a> </td>
+       <td onclick="window.location='/deleteclient?id={{ id.idno }}'"> <a onclick=""><i class="fa fa-trash" ></i></a> </td>
+    </tr>
+
+    {% endfor %}
+ </table>
+{#                      <table id="customers">#}
+{#                        </table>#}
                   </div>
               </div>
           </div>
       </div>
   </section>
+
   <!-- Edit Client Data Modal Section -->
   <section class="small_pb">
       <div class="container">
@@ -715,7 +739,6 @@
                               <option value="Quepem">Quepem</option>
                               <option value="Marmugao">Marmugao</option>
                               <option value="Sanguem">Sanguem</option>
-                             
                           </select>
                       </div>
                   </div>
@@ -739,318 +762,6 @@
         </div>
       </div>
     </div>
-  <script src="assets/js/jquery-1.12.4.min.js"></script>
-  <script>
 
-    document.getElementById("logout").onclick = function() {myFunction()};
-
-    function myFunction() {
-          localStorage.removeItem("data");
-          localStorage.removeItem("login");
-          location.href = 'index.html';
-        }
-
-    function redirection(id){
-        if(!id)
-            return
-        localStorage.setItem("client_id", id);
-        location.href = 'document.html';
-    }
-
-    (function ($) {
-        // get localstorage
-        // if found print on the screen or alert
-
-        if (typeof(Storage) !== "undefined") {
-          // Code for localStorage/sessionStorage.
-          if( localStorage.login){
-            if(localStorage.data){
-              // print data
-              var jsonop = JSON.parse(localStorage.data)
-              var textline = "Welcome, " + jsonop['user_id']['name']
-              $( "#add" ).text(JSON.stringify(textline)  );
-              console.log("Logged in")
-            }
-            else{
-              location.href = 'index.html';
-            }
-          }
-        } else {
-          location.href = 'index.html';
-          // Sorry! No Web Storage support..
-        }
-
-        $.fn.serializeFormJSON = function () {
-
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function () {
-                if (o[this.name]) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        };
-
-    deletefx = function (id){
-        var ans = confirm("Are you sure to delete Client with id "+id+"?")
-        if(ans){
-            var settings = {
-                "url": "http://184.73.254.81:8099/client/"+String(id),
-                "method": "DELETE",
-                "timeout": 0,
-                };
-
-            $.ajax(settings).done(function (response) {
-                console.log(response)
-                alert('Client Deleted')
-                getData()
-            });
-        }
-    }
-
-    populateUserNames = () =>{
-
-        $.ajax({
-            url: "http://184.73.254.81:8099/user/",
-            dataType: "json",
-            type: "post",
-            crossDomain: true,
-            headers: {
-                        "Content-Type": "application/json"
-                    },
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                $.each(["assign_to","assign_to1","urgent_reminders","remind","remind_2"], function(i,defID) {
-                    var $el = $("#"+String(defID));
-                    $("#"+String(defID)+' option:gt(0)').remove();
-                    $.each(data, function(i,item) {
-                        $el.append($("<option></option>")
-                            .attr("value", item['name']).text(item['name']));
-                    });
-                });
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-        });
-    }
-
-    function getData(){
-        $.ajax({
-            url: "http://184.73.254.81:8099/client/",
-            dataType: "json",
-            type: "post",
-            crossDomain: true,
-            headers: {
-                        "Content-Type": "application/json"
-                    },
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                $('table').empty()
-
-                $('table').append(
-                    $('<tr>'),
-                    $('<th>').html("Master ID"),
-                    $('<th>').text("Client Name - Click For Documents"),
-                    $('<th>').text("Email ID"),
-                    $('<th>').text("Whatsapp Group Name"),
-                    $('<th>').text("Edit"),
-                    $('<th>').text("Delete"),
-                    $('</tr>')
-                );
-
-                // adding client List to search Case Owner
-
-                var $el = $("#case_owner");
-                $('#case_owner option:gt(0)').remove();
-
-                $.each(data, function(i, item) {
-                    $el.append($("<option></option>")
-                        .attr("value", item['name']).text(item['name']));
-                    var $tr = $('table').append(
-                        $('<tr>'),
-                        $('<td>').html( parseInt(i) +1),
-                        $('<td>').html("<a href=\"#\" onclick = \"redirection("+item.id+")\"> <b>"+item.name+"</b></a>"),
-                        $('<td>').text(item.email),
-                        $('<td>').text(item.wa_group_name),
-                        $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" onclick = \"editClient("+item.id+")\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
-                        $('<td>').html("<i class=\"ion-android-delete\" onclick=\"deletefx("+item.id+")\" style=\"font-size: 25px;color: #dc3545;\"></i>"),
-                        $('</tr>')
-                    );
-                });
-              if(data === {})
-              {console.log('empty')}
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-          });
-    }
-
-     editClient = function(id){
-        $('#editModal').modal('show');
-
-        $.ajax({
-            url: "http://184.73.254.81:8099/client/"+parseInt(id),
-            dataType: "json",
-            type: "post",
-            crossDomain: true,
-            headers: {
-                        "Content-Type": "application/json"
-                    },
-            success: function (data, textStatus, jQxhr) {
-                var re = /(\d{4})-(\d{2})-(\d{2}) (\d{2}:\d{2}:\d{2})/;
-                console.log(data)
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        if(key.includes('date')){
-                            if(key.includes('updated'))
-                                continue;
-                            console.log(key, ": ",data[key])
-                            data[key].replace(data[key], '$3/$2/$1');
-                        }
-                    }
-                }
-                $.each(data, function(i, item) {
-                    $('#'+String(i)+('1')).val(item==="None"?"":(item||""));
-                    $('#id_for_edit').val(id);
-                })
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-        });
-    }
-
-
-    $("#search_client").submit(()=>{
-        event.preventDefault();
-        console.log("Search Commenced")
-        let myForm = document.getElementById('search_client');
-        let formData = new FormData(myForm);
-        const value = Object.fromEntries(formData.entries());
-        console.log(value)
-        localStorage.setItem("search_post", JSON.stringify(value));
-        location.href = "search_result.html";
-    });
-
-     $("#enq_edit").submit(()=>{
-        event.preventDefault();
-        let myForm = document.getElementById('enq_edit');
-        let formData = new FormData(myForm);
-        const value = Object.fromEntries(formData.entries());
-        var id = value["id_for_edit"]
-        var settings = {
-            "url": "http://184.73.254.81:8099/client/"+(id),
-            "method": "PUT",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(value)
-            };
-
-            $.ajax(settings).done(function (data) {
-                console.log(data)
-                if(data === {})
-                    {console.log('empty')}
-
-                if (typeof(Storage) !== "undefined") {
-                    alert('Client Updated')
-                    getData()
-                } else {
-                    console.log('Error')
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
-            $('#editModal').modal('hide');
-     });
-
-
-    function deleteForm(id){
-        $.ajax({
-            url: "http://184.73.254.81:8099/client/"+parseInt(id),
-            type: "DELETE",
-            crossDomain: true,
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                alert('Client Deleted')
-                getData()
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-          });
-    }
-
-    function addClient(){
-        event.preventDefault();
-        var op = JSON.stringify($(this).serializeFormJSON())
-        var settings = {
-            "url": "http://184.73.254.81:8099/client/",
-            "method": "PUT",
-            "timeout": 0,
-            "headers": {
-                    "Content-Type": "application/json"
-                },
-            "data": op
-        };
-
-            $.ajax(settings).done(function (data) {
-                console.log(data)
-                if(data === {})
-                    {console.log('empty')}
-
-                if (typeof(Storage) !== "undefined") {
-                    alert('Client added')
-                    getData()
-                } else {
-                    console.log('Error')
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) { console.log(textStatus); console.log(errorThrown); });
-    }
-        // once submitted,
-        // push to API
-        $("#enq").submit(addClient);
-        getData()
-        populateUserNames();
-      })(jQuery);
-
-</script>
-<!-- Latest jQuery -->
-
-<!-- jquery-ui -->
-<script src="assets/js/jquery-ui.js"></script>
-<!-- popper min js -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Latest compiled and minified Bootstrap -->
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- owl-carousel min js  -->
-<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
-<!-- magnific-popup min js  -->
-<script src="assets/js/magnific-popup.min.js"></script>
-<!-- waypoints min js  -->
-<script src="assets/js/waypoints.min.js"></script>
-<!-- parallax js  -->
-<script src="assets/js/parallax.js"></script>
-<!-- countdown js  -->
-<script src="assets/js/jquery.countdown.min.js"></script>
-<!-- fit video  -->
-<script src="assets/js/jquery.fitvids.js"></script>
-<!-- jquery.counterup.min js -->
-<script src="assets/js/jquery.counterup.min.js"></script>
-<!-- isotope min js -->
-<script src="assets/js/isotope.min.js"></script>
-<!-- elevatezoom js -->
-<script src='assets/js/jquery.elevatezoom.js'></script>
-<!-- scripts js -->
-<script src="assets/js/scripts.js"></script>
-<!-- DatePicker js -->
-<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
 </body>
 </html>

@@ -74,38 +74,38 @@
 <header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
     <div class="container">
       <nav class="navbar navbar-expand-lg"> 
-          <a class="navbar-brand" href="dashboard.html">
+          <a class="navbar-brand" href="dashboard">
               <!-- <h2 style="
               font-weight: 600;
               text-transform: uppercase;
               font-size:25px;
           ">Logo</h2> -->
-          <img src="assets/logo.png">
+          <img src="{{ url_for('static',filename='logo.png') }}">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
               <ul class="navbar-nav attr-nav align-items-center">
                  
                   <li>
-                      <a class="nav-link page-scroll active" href="dashboard.html" style="color:#000;">Dashboard</a>
+                      <a class="nav-link page-scroll active" href="dashboard" style="color:#000;">Dashboard</a>
                   </li>
                  
                   <!-- <li>
                       <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
                   </li> -->
                   <li>
-                    <a class="nav-link page-scroll active" href="add_user.html" style="color:#000;">USer Details</a>
+                    <a class="nav-link page-scroll active" href="adduser" style="color:#000;">USer Details</a>
                 </li>
                   <li>
-                      <a class="nav-link page-scroll active" href="custom_report.html" style="color:#000;">Custom Report</a>
+{#                      <a class="nav-link page-scroll active" href="customreport" style="color:#000;">Custom Report</a>#}
                   </li>
                   
                   <!-- <ul class="navbar-nav attr-nav align-items-center"> -->
-                      <li><a href="add_client.html" class="nav-link"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> New</button></a></li>
+                      <li><a href="addclient" class="nav-link"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> New</button></a></li>
                       <!-- <li><a href="reminder_followup.html" class="nav-link "><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li> -->
                       <!-- <li><a href="index.html" class="nav-link "><i class="ion-android-person"></i></a></li> -->
                       <!-- <li><a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModalLong"><i class="ion-ios-search-strong" style="font-size:25px;"></i></a> -->
-                      <li><a href="index.html" class="nav-link"><i class="ion-log-out"  id = "logout" style="color: #000;font-size: 24px;"></i>&nbsp; Logout</a></li>
+                      <li><a href="/" class="nav-link"><i class="ion-log-out"  id = "logout" style="color: #000;font-size: 24px;"></i>&nbsp; Logout</a></li>
                   <!-- </ul> -->
               </ul>
             </div>
@@ -169,22 +169,65 @@
 </section>
   
   <!-- Show Client Table Section -->
+
+<!-- Show Documents Table Section -->
   <section class="small_pb overflow_hide">
       <div class="container">
           <div class="row align-items-center">
               <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">
-                  <div class="heading_s1 text-center"> 
+                  <div class="heading_s1 text-center">
                     <h2>User Details</h2>
                   </div>
-                 
+
                   <div class="row">
-                      <table id="customers">
-                        </table>
+                      <table border = 1>
+
+    <tr height = "50px" style="background: #0b0b0b;text-align: center">
+       <th style="color: white;padding: 20px"> {{ "Id" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Name" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Email" }} </th>
+{#       <th style="color: white;padding: 20px"> {{ "Password" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "User Type" }} </th>#}
+       <th style="color: white;padding: 20px"> {{ "Edit" }} </th>
+       <th style="color: white;padding: 20px"> {{ "Delete" }} </th>
+    </tr>
+    {% for id in result %}
+
+        <tr height = "50px" style="text-align: center">
+       <td> {{ id.idno }} </td>
+       <td> {{ id.name }} </td>
+       <td> {{ id.email }} </td>
+{#       <td> {{ id.password }} </td>#}
+{#       <td> {{ id.user_type }} </td>#}
+       <td onclick="window.location='/editusers?id={{ id.idno }}'"> <a ><i class="fa fa-edit" ></i></a> </td>
+       <td onclick="window.location='/deleteuser?id={{ id.idno }}'"> <a onclick=""><i class="fa fa-trash" ></i></a> </td>
+    </tr>
+
+    {% endfor %}
+ </table>
+
                   </div>
               </div>
           </div>
       </div>
   </section>
+
+{#  <section class="small_pb overflow_hide">#}
+{#      <div class="container">#}
+{#          <div class="row align-items-center">#}
+{#              <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">#}
+{#                  <div class="heading_s1 text-center"> #}
+{#                    <h2>User Details</h2>#}
+{#                  </div>#}
+{#                 #}
+{#                  <div class="row">#}
+{#                      <table id="customers">#}
+{#                        </table>#}
+{#                  </div>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#  </section>#}
   <!-- Edit User Data Modal Section -->
   <section class="small_pb">
       <div class="container">
@@ -542,289 +585,5 @@
         </div>
       </div>
     </div>
-  <script src="assets/js/jquery-1.12.4.min.js"></script>
-  <script>
-
-    document.getElementById("logout").onclick = function() {myFunction()};
-    
-    function myFunction() {
-          localStorage.removeItem("data");
-          localStorage.removeItem("login");
-          location.href = 'index.html';
-        }
-        
-        
-    (function ($) {
-        // get localstorage
-        // if found print on the screen or alert
-        
-        if (typeof(Storage) !== "undefined") {
-          // Code for localStorage/sessionStorage.
-          if( localStorage.login){
-            if(localStorage.data){
-              // print data
-              var jsonop = JSON.parse(localStorage.data)
-              var textline = "Welcome, " + jsonop['user_id']['name']
-              $( "#add" ).text(JSON.stringify(textline)  );
-              console.log("Logged in")
-            }
-            else{
-              location.href = 'index.html';
-            }
-          }
-        } else {
-          location.href = 'index.html';
-          // Sorry! No Web Storage support..
-        }
-    
-        $.fn.serializeFormJSON = function () {
-    
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function () {
-                if (o[this.name]) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        };
-    
-    deletefx = function (id){
-        var ans = confirm("Are you sure to delete user with id "+id+"?")
-        if(ans){
-            var settings = {
-                "url": "http://184.73.254.81:8099/user/"+String(id),
-                "method": "DELETE",
-                "timeout": 0,
-                };
-
-            $.ajax(settings).done(function (response) {
-                console.log(response)
-                alert('Client Deleted')
-                getData()
-            });
-        }
-    }
-    
-    function getData(){
-        $.ajax({
-            url: "http://184.73.254.81:8099/user/",
-            dataType: "json",
-            type: "post",
-            crossDomain: true,
-            headers: {
-                        "Content-Type": "application/json"
-                    },
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                $('table').empty()
-    
-                $('table').append(
-                    $('<tr>'),
-                    $('<th>').html("Sr. No."),
-                    $('<th>').text("User Name"),
-                    $('<th>').text("Email ID"),
-                    $('<th>').text("Password"),
-                    $('<th>').text("User Type"),
-                    $('<th>').text("Edit"),
-                    $('<th>').text("Delete"),
-                    $('</tr>')
-                );
-              
-                var jsonop = JSON.parse(localStorage.data)
-                var textline = "Welcome, " + jsonop['user_id']['name']
-                // if Type is admin show all, else show self
-                //user_type: "2"
-                if(jsonop['user_id']['user_type'] == 2){
-                    // else type == user
-                    // hide add user block
-                    $("#contact").hide();
-                    var item = jsonop['user_id']
-                    var $tr = $('table').append(
-                        $('<tr>'),
-                        $('<td>').text(1),
-                        $('<td>').text(item.name),
-                        $('<td>').text(item.email),
-                        $('<td>').text(item.password),
-                        $('<td>').text((item.user_type == 1)?"Admin":"User"),
-                        $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" onclick = \"editClient("+item.id+")\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
-                        $('<td>').html("<i class=\"ion-android-delete\"  style=\"font-size: 25px;color: #A9A9A9;\"></i>"),
-                        $('</tr>')
-                    ); 
-                }
-                else{
-                    $.each(data, function(i, item) {
-                        var $tr = $('table').append(
-                            $('<tr>'),
-                            $('<td>').html( parseInt(i) +1),
-                            $('<td>').text(item.name),
-                            $('<td>').text(item.email),
-                            $('<td>').text(item.password),
-                            $('<td>').text((item.user_type == 1)?"Admin":"User"),
-                            $('<td>').html("<a href=\"#\"><i class=\"ion-edit\" onclick = \"editClient("+item.id+")\" style=\"font-size: 25px;color:#218838;\"></i></a>"),
-                            $('<td>').html("<i class=\"ion-android-delete\" onclick=\"deletefx("+item.id+")\" style=\"font-size: 25px;color: #dc3545;\"></i>"),
-                            $('</tr>')
-                        ); 
-                    });
-                }
-
-
-              if(data === {})
-              {console.log('empty')}
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-          });
-    }
-
-     editClient = function(id){
-        $('#editModal').modal('show');
-
-        $.ajax({
-            url: "http://184.73.254.81:8099/user/"+parseInt(id),
-            dataType: "json",
-            type: "post",
-            crossDomain: true,
-            headers: {
-                        "Content-Type": "application/json"
-                    },
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                $.each(data, function(i, item) {                
-                    $('#'+String(i)+('1')).val(item==="None"?"":(item||""));
-                })
-                $('#id_for_edit').val(id);
-                var jsonop = JSON.parse(localStorage.data)
-                var textline = "Welcome, " + jsonop['user_id']['name']
-                // if Type is admin show all, else show self
-                //user_type: "2"
-                if(jsonop['user_id']['user_type'] == 2){
-                    // make admin dropdown frozen for Users
-                    $("#user_type1").prop('disabled', true);
-                }
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-        });
-    }
-
-     $("#enq_edit").submit(()=>{
-        event.preventDefault();
-        let myForm = document.getElementById('enq_edit');
-        let formData = new FormData(myForm);
-        const value = Object.fromEntries(formData.entries());
-        var id = value["id_for_edit"]
-        var settings = {
-            "url": "http://184.73.254.81:8099/user/"+(id),
-            "method": "PUT",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(value)
-            };
-
-            $.ajax(settings).done(function (data) {
-                console.log(data)
-                if(data === {})
-                    {console.log('empty')}
-        
-                if (typeof(Storage) !== "undefined") {
-                    alert('User Updated')
-                    getData()
-                } else {
-                    console.log('Error')
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) {  console.log(errorThrown); });
-            $('#editModal').modal('hide');
-     });
-
-
-    function deleteForm(id){
-        $.ajax({
-            url: "http://184.73.254.81:8099/user/"+parseInt(id),
-            type: "DELETE",
-            crossDomain: true,
-            success: function (data, textStatus, jQxhr) {
-                console.log(data)
-                alert('User Deleted')
-                getData()
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              console.log(errorThrown);
-            },
-          });
-    }
-
-    function addClient(){
-        event.preventDefault();
-        var op = JSON.stringify($(this).serializeFormJSON())
-        var settings = {
-            "url": "http://184.73.254.81:8099/user/",
-            "method": "PUT",
-            "timeout": 0,
-            "headers": {
-                    "Content-Type": "application/json"
-                },
-            "data": op
-        };
-
-            $.ajax(settings).done(function (data) {
-                console.log(data)
-                if(data === {})
-                    {console.log('empty')}
-        
-                if (typeof(Storage) !== "undefined") {
-                    alert('User added')
-                    getData()
-                } else {
-                    console.log('Error')
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) { console.log(textStatus); console.log(errorThrown); });
-    }
-        // once submitted, 
-        // push to API
-        $("#enq").submit(addClient);
-        getData()
-      })(jQuery);
-        
-</script>
-<!-- Latest jQuery --> 
-
-<!-- jquery-ui --> 
-<script src="assets/js/jquery-ui.js"></script> 
-<!-- popper min js --> 
-<script src="assets/js/popper.min.js"></script>
-<!-- Latest compiled and minified Bootstrap --> 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
-<!-- owl-carousel min js  --> 
-<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
-<!-- magnific-popup min js  --> 
-<script src="assets/js/magnific-popup.min.js"></script> 
-<!-- waypoints min js  --> 
-<script src="assets/js/waypoints.min.js"></script> 
-<!-- parallax js  --> 
-<script src="assets/js/parallax.js"></script> 
-<!-- countdown js  --> 
-<script src="assets/js/jquery.countdown.min.js"></script> 
-<!-- fit video  -->
-<script src="assets/js/jquery.fitvids.js"></script>
-<!-- jquery.counterup.min js --> 
-<script src="assets/js/jquery.counterup.min.js"></script>
-<!-- isotope min js --> 
-<script src="assets/js/isotope.min.js"></script>
-<!-- elevatezoom js -->
-<script src='assets/js/jquery.elevatezoom.js'></script> 
-<!-- scripts js --> 
-<script src="assets/js/scripts.js"></script>
-<!-- DatePicker js -->
-<script type="text/javascript" src="assets/js/datepicker.min.js"></script>
 </body>
 </html>

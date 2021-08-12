@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Add Client</title>
+<!-- Favicon Icon -->
+{#<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">#}
+<!-- Animation CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="{{ url_for('static',filename='css/ico-moon.css') }}" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/themify-icons.css') }}">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/all.min.css') }}">
+{#<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">#}
+{#<link rel="stylesheet" href="assets/css/main.css">#}
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}">
+<link rel="stylesheet" id="layoutstyle" href="{{ url_for('static',filename='color/theme.css') }}">
+
+<!-- DatePicker CSS -->
+<link href="{{ url_for('static',filename='css/datepicker.min.css') }}" rel="stylesheet">
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    th {
+  cursor: pointer;
+}
+
+    </style>
+
+</head>
+
+<body>
+<!-- START HEADER -->
+<header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="dashboard">
+              <!-- <h2 style="
+              font-weight: 600;
+              text-transform: uppercase;
+              font-size:25px;
+          ">Logo</h2> -->
+          <img src="{{ url_for('static',filename='logo.png') }}">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav attr-nav align-items-center">
+
+                  <li>
+                      <a class="nav-link page-scroll active" href="dashboard" style="color:#000;">Dashboard</a>
+                  </li>
+
+                  <!-- <li>
+                      <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                  </li> -->
+                  <li>
+                    <a class="nav-link page-scroll active" href="adduser" style="color:#000;">USer Details</a>
+                </li>
+                  <li>
+{#                      <a class="nav-link page-scroll active" href="customreport" style="color:#000;">Custom Report</a>#}
+                  </li>
+
+                  <!-- <ul class="navbar-nav attr-nav align-items-center"> -->
+                      <li><a href="addclient" class="nav-link"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> New</button></a></li>
+                      <!-- <li><a href="reminder_followup.html" class="nav-link "><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li> -->
+                      <!-- <li><a href="index.html" class="nav-link "><i class="ion-android-person"></i></a></li> -->
+                      <!-- <li><a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModalLong"><i class="ion-ios-search-strong" style="font-size:25px;"></i></a> -->
+                      <li><a href="/" class="nav-link"><i class="ion-log-out"  id = "logout" style="color: #000;font-size: 24px;"></i>&nbsp; Logout</a></li>
+                  <!-- </ul> -->
+              </ul>
+            </div>
+      </nav>
+    </div>
+  </header>
+  <!-- END HEADER -->
+  <section id="contact">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                <div class="field_form" style="box-shadow: 0 0 5px rgba(0,0,0,0.2);padding:20px;">
+                    <div class="row">
+                        <div class="col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">
+                            <div class="heading_s1 text-center" style="padding:27px;">
+                                <h2>Edit User</h2>
+                            </div>
+                        </div>
+                    </div>
+                        <form  action="/editusers" method="post" id = "enq" name="enq">
+                        <div class="row">
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">User Id : <span class="asterisk-color">*</span></label>
+                                <input value="{{ result.id }}" placeholder="id" id="id" class="form-control" name="id" type="text">
+                             </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">User Name : <span class="asterisk-color">*</span></label>
+                                <input  value="{{ result.name }}" placeholder="Client Name" id="name" class="form-control" name="name" type="text">
+                             </div>
+
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                <input  value="{{ result.email }}" placeholder=" Email id " id="email" class="form-control" name="email" type="email">
+                            </div>
+
+{#                            <div class="form-group col-lg-3 col-md-6">#}
+{#                                <label style="font-weight: 700;">Password : <span class="asterisk-color">*</span></label>#}
+{#                                <input  value="{{ result.name1 }}" required="" placeholder="Password " id="password" class="form-control" name="password" type="text">#}
+{#                            </div>#}
+
+                            <div class="form-group col-lg-3 col-md-6">
+                                <label style="font-weight: 700;">User Type : <span class="asterisk-color">*</span></label>
+                                <div class="custom_select">
+                                    <select class="form-control not_chosen" id="user_type" name = "user_type">
+                                      <option  value="{{ result.user_type }}"> {% if result.user_type== 1 %}
+      Admin
+{% else %}
+     User
+{% endif %}
+                                      </option>
+                                      <option value="1">Admin</option>
+                                      <option value="2">User</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" name="submit" value="Submit">Save</button>
+                            </div>
+                            <div class="col-lg-12">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Show Client Table Section -->
+
+{#<!-- Show Documents Table Section -->#}
+{#  <section class="small_pb overflow_hide">#}
+{#      <div class="container">#}
+{#          <div class="row align-items-center">#}
+{#              <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">#}
+{#                  <div class="heading_s1 text-center">#}
+{#                    <h2>User Details</h2>#}
+{#                  </div>#}
+{##}
+{#                  <div class="row">#}
+{#                      <table border = 1>#}
+{##}
+{#    <tr height = "50px" style="background: #0b0b0b;text-align: center">#}
+{#       <th style="color: white;padding: 20px"> {{ "Id" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Name" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Email" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Password" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "User Type" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Edit" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Delete" }} </th>#}
+{#    </tr>#}
+{#    {% for id in result %}#}
+{##}
+{#        <tr height = "50px" style="text-align: center">#}
+{#       <td> {{ id.idno }} </td>#}
+{#       <td> {{ id.name }} </td>#}
+{#       <td> {{ id.email }} </td>#}
+{#       <td> {{ id.password }} </td>#}
+{#       <td> {{ id.user_type }} </td>#}
+{#       <td onclick="window.location='/editusers?id={{ id.idno }}'"> <a ><i class="fa fa-edit" ></i></a> </td>#}
+{#       <td onclick="window.location='/deleteuser?id={{ id.idno }}'"> <a onclick=""><i class="fa fa-trash" ></i></a> </td>#}
+{#    </tr>#}
+{##}
+{#    {% endfor %}#}
+{# </table>#}
+{##}
+{#                  </div>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#  </section>#}
+
+{#  <section class="small_pb overflow_hide">#}
+{#      <div class="container">#}
+{#          <div class="row align-items-center">#}
+{#              <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">#}
+{#                  <div class="heading_s1 text-center"> #}
+{#                    <h2>User Details</h2>#}
+{#                  </div>#}
+{#                 #}
+{#                  <div class="row">#}
+{#                      <table id="customers">#}
+{#                        </table>#}
+{#                  </div>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#  </section>#}
+  <!-- Edit User Data Modal Section -->
+  <section class="small_pb">
+      <div class="container">
+          <div class="row mb-md-5 mb-3">
+              <div class="col-md-12">
+                  <!-- Modal -->
+                  <div id = "editModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: 600;color: #8c8888;">Edit User Details</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form method="post" name="enq_edit" id ="enq_edit">
+                        <div class="modal-body">
+
+                              <div class="row">
+                                    <input type="hidden" id="id_for_edit" name="id_for_edit" value="">
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">User Name : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder="Client Name" id="name1" class="form-control" name="name" type="text">
+                                   </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder=" Email id " id="email1" class="form-control" name="email" type="email">
+                                  </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Password : <span class="asterisk-color">*</span></label>
+                                      <input required="" placeholder="Password " id="password1" class="form-control" name="password" type="text">
+                                  </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">User Type : <span class="asterisk-color">*</span></label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="user_type1" name = "user_type">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">User</option>
+                                          </select>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-12">
+                                      <div id="alert-msg" class="alert-msg text-center"></div>
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                          <button type="submit" id="editChanges" class="btn btn-default">Save changes</button>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- END SECTION FEATURE -->
+
+  <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+  <!-- Search Client Modal Section -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background:rgba(0, 0, 0, 0.8);">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"  style="color:#fff;">Search <i class="ion-ios-search-strong"></i></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"  style="color:#fff;">
+              <span aria-hidden="true" style="color:#fff;">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form method="post" action="search_result.html">
+                  <div class="row">
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Master Id:</label>
+                      <input placeholder="Master Id " id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="number">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Phone:</label>
+                      <input placeholder="Phone Number" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="phone">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Last Disposition:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">--- Select ---</option>
+                              <option value="1">Billing </option>
+                              <option value="2">Case Update</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Client Name:</label>
+                      <input placeholder="Client Name" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="number">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Email Address: </label>
+                      <input  placeholder="Email Address" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="email">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Search Location: </label>
+                      <input  placeholder="Search Location" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">WhatsApp Group Name:</label>
+                      <input  placeholder="WhatsApp Group Name" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Taluka to Search:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value=""> --- Select --- </option>
+                              <option value="1">Bardez</option>
+                              <option value="2">Sattari</option>
+                              <option value="3">Bicholim</option>
+                              <option value="4">Pernem</option>
+                              <option value="5">Ponda</option>
+                              <option value="6">Tiswadi</option>
+                              <option value="7">Salcette</option>
+                              <option value="8"> Canacona</option>
+                              <option value="9">Quepem</option>
+                              <option value="10">Marmugao</option>
+                              <option value="11">Sanguem</option>
+
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Case Status:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">--- Select ---</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Enquiry Follow Up:</label>
+                      <input placeholder="Enquiry Follow Up" id="whatsapp_gname" class="form-control" name="whatsapp_gname" type="text">
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Terms Email Send:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">--- Select ---</option>
+                              <option value="1">Yes</option>
+                              <option value="2">NO</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Case Owner:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Current Case Stage: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" name="cureent_case_st" id="cureent_case_st">
+                              <option value="">--- Select --- </option>
+                              <option value="1">Enquiry- Online</option>
+                              <option value="2"> Enquiry- Walkin</option>
+                              <option value="3"> Will Get Back </option>
+                              <option value="4"> Not Interested </option>
+                              <option value="5">Enquiry - Documents Handed </option>
+                              <option value="6">  Initial Advance Paid</option>
+                              <option value="7">  Case Draft Shared</option>
+                              <option value="8">Submitted Documents Pending Client </option>
+                              <option value="9"> Search Billing</option>
+                              <option value="10"> Search On</option>
+                              <option value="11"> Case Study</option>
+                              <option value="12"> URGENT - Case Study </option>
+                              <option value="13">  Case Study Shared</option>
+                              <option value="14"> Case Study Shared - Corrections on Client </option>
+                              <option value="15">  Case Study Shared - Corrections on Office </option>
+                              <option value="16">A&amp;T Billing </option>
+                              <option value="17"> A&amp;T Billing Shared </option>
+                              <option value="18"> Start Attestation.</option>
+                              <option value="19"> Translation</option>
+                              <option value="20">Notary </option>
+                              <option value="21"> Collector</option>
+                              <option value="22"> Apostile</option>
+                              <option value="23"> Sent to PT</option>
+                              <option value="24">Submitted </option>
+                              <option value="25">Submitted Corrections Client </option>
+                              <option value="26"> Submitted Corrections Office</option>
+                              <option value="27"> Pending Submission</option>
+                              <option value="28">  Pending Submission Due to Documents Pending </option>
+                              <option value="29"> Pending Submission Due to Fees </option>
+                              <option value="30"> Concluded</option>
+                              <option value="31">Concluded Documents pending for next process </option>
+                              <option value="32"> Case on Hold by Client</option>
+                              <option value="33">Dead End </option>
+                              <option value="34">Initial Refunded </option>
+                              <option value="35"> NA </option>
+                              <option value="36">Birth Between 1961 to 1970 </option>
+                              <option value="37">  Not Eligible</option>
+                              <option value="38">  Cannot Afford</option>
+
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Remind:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Remind 2:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Urgent Reminders: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Joshua: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Correction start Date : </label>
+                      <input  placeholder="Correction Start Date" class="form-control datepicker" name="date" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Taluka:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value=""> --- Select --- </option>
+                              <option value="1">Bardez</option>
+                              <option value="2">Sattari</option>
+                              <option value="3">Bicholim</option>
+                              <option value="4">Pernem</option>
+                              <option value="5">Ponda</option>
+                              <option value="6">Tiswadi</option>
+                              <option value="7">Salcette</option>
+                              <option value="8"> Canacona</option>
+                              <option value="9">Quepem</option>
+                              <option value="10">Marmugao</option>
+                              <option value="11">Sanguem</option>
+
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Veena: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+
+                <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Wesley: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">Facebook</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Billing: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen">
+                              <option value="">--- Select ---</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-12 col-md-12">
+                      <label style="font-weight: 700;color:#fff;">Follow Ups for The:</label>
+                      <div class="chek-form mb-4">
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="" checked="">
+                              <label class="form-check-label" for="exampleCheckbox3" style="color:#fff;">Jyoti</label>
+                          </div>
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox4" value="">
+                              <label class="form-check-label" for="exampleCheckbox4" style="color:#fff;">Norika De Sa</label>
+                          </div>
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox5" value="">
+                              <label class="form-check-label" for="exampleCheckbox5" style="color:#fff;"> Shubham Pednekar</label>
+                          </div>
+
+                      </div>
+                      <div class="chek-form mb-4">
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox6" value="">
+                              <label class="form-check-label" for="exampleCheckbox6" style="color:#fff;">Criselda</label>
+                          </div>
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox7" value="">
+                              <label class="form-check-label" for="exampleCheckbox7" style="color:#fff;"> Gautami M</label>
+                          </div>
+                          <div class="custome-checkbox form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox8" value="">
+                              <label class="form-check-label" for="exampleCheckbox8" style="color:#fff;">Rovena Fernandes</label>
+                          </div>
+                          </div>
+
+                  </div>
+                  </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+            <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius"  name="submit" value="Submit"> Search <i class="ion-ios-search-strong"></i> </button>
+          </div>
+      </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

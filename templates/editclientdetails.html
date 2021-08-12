@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SITE TITLE -->
+<title>Add Client</title>
+<!-- Favicon Icon -->
+{#<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">#}
+<!-- Animation CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="{{ url_for('static',filename='css/ico-moon.css') }}" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/themify-icons.css') }}">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/all.min.css') }}">
+{#<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">#}
+{#<link rel="stylesheet" href="assets/css/main.css">#}
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}">
+<link rel="stylesheet" id="layoutstyle" href="{{ url_for('static',filename='color/theme.css') }}">
+
+<!-- DatePicker CSS -->
+<link href="{{ url_for('static',filename='css/datepicker.min.css') }}" rel="stylesheet">
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    th {
+  cursor: pointer;
+}
+
+    </style>
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:#5a5959;
+      color: white;
+    }
+    th {
+  cursor: pointer;
+}
+
+    </style>
+
+</head>
+
+<body>
+<!-- START HEADER -->
+<header class="header_wrap dark_skin hover_menu_style3 box_shadow3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="dashboard">
+              <!-- <h2 style="
+              font-weight: 600;
+              text-transform: uppercase;
+              font-size:25px;
+          ">Logo</h2> -->
+          <img src="{{ url_for('static',filename='/logo.png') }}" height="100px" width="auto">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <ul class="navbar-nav attr-nav align-items-center">
+                    <li>
+                        <a class="nav-link page-scroll active" href="dashboard" style="color:#000;">Dashboard</a>
+                    </li>
+                    <!-- <li>
+                        <a class="nav-link page-scroll active" href="document.html" style="color:#000;">Document</a>
+                    </li> -->
+                    <li>
+                      <a class="nav-link page-scroll active" href="adduser" style="color:#000;">USer Details</a>
+                  </li>
+                    <li>
+{#                        <a class="nav-link page-scroll active" href="customreport" style="color:#000;">Custom Report</a>#}
+                    </li>
+                      <li><a href="addclient" class="nav-link"><button class=" btn-default btn-xs box_shadow3" type="button" style="font-weight:600;text-transform: uppercase;border-radius:5px;"><i class="ion-android-add-circle"></i> New</button></a></li>
+                      <!-- <li><a href="reminder_followup.html" class="nav-link "><i class="ion-ios-bell"></i><span class="cart_count" style="background-color:red;">2</span></a></li>
+                      <li><a href="index.html" class="nav-link "><i class="ion-android-person"></i></a></li> -->
+                      <li><a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModalLong"><i class="ion-ios-search-strong" style="font-size:25px;"></i></a>
+                      <li><a href="/" class="nav-link"><i  class="ion-log-out"  id = "logout" style="color: #000;font-size: 24px;"></i>  &nbsp; Logout</a></li>
+                  </ul>
+              </ul>
+              </div>
+      </nav>
+    </div>
+  </header>
+  <!-- END HEADER -->
+
+  <section id="contact">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                  <div class="field_form" style="box-shadow: 0 0 5px rgba(0,0,0,0.2);padding:20px;">
+                      <div class="row">
+                          <div class="col-md-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s" style="animation-delay: 0.2s; opacity: 1;">
+                              <div class="heading_s1 text-center" style="padding:27px;">
+                                  <h2>Edit Client</h2>
+                              </div>
+                          </div>
+                      </div>
+                          <form method="post" action="/editclients" id = "enq" name="enq">
+                          <div class="row">
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Client ID : <span class="asterisk-color">*</span></label>
+                                  <input  value="{{ result.id }}" placeholder="Client Name" id="id" class="form-control" name="id" type="text">
+                               </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Client Name : <span class="asterisk-color">*</span></label>
+                                  <input required="required" value="{{ result.name1 }}" placeholder="Client Name" id="name" class="form-control" name="name" type="text">
+                               </div>
+                               <div class="form-group col-lg-3 col-md-6">
+                                <label>Phone Number :<span class="asterisk-color">*</span></label>
+                                <input value="{{ result.number1 }}" required="required" placeholder="Phone Number *" id="phone_no" class="form-control" name="number" type="phone">
+                             </div>
+                             <div class="form-group col-lg-3 col-md-6">
+                                <label  style="font-weight: 700;">Phone Number 1 : </label>
+                                <input value="{{ result.number_alt }}" placeholder="Alternate Number" id="alternate_no" class="form-control" name="number_alt" type="phone">
+                            </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                  <input value="{{ result.email }}" required="required" placeholder=" Email id " id="email1" class="form-control" name="email" type="email">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Email id2 : <span class="asterisk-color">*</span></label>
+                                  <input value="{{ result.email_alt }}" required="" placeholder="Email id2 " id="email2" class="form-control" name="email_alt" type="email">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Client Location : <span class="asterisk-color">*</span></label>
+                                  <input value="{{ result.location }}" required="required" placeholder="Client Location " id="location" class="form-control" name="location" type="search">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">First Contact Date : </label>
+                                  <input value="{{ result.first_contact_date }}" placeholder="First Contact Date" class="form-control datepicker" name="date" type="text">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Source : <span class="asterisk-color">*</span></label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="source" name="source">
+                                          <option value="{{ result.source1 }}"> {{ result.source1 }} </option>
+                                          <option value="Facebook">Facebook</option>
+                                          <option value="Instagram">Instagram</option>
+                                          <option value="Referrence">Referrence</option>
+                                          <option value="Whatsapp">Whatsapp</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Referred By :</label>
+                                  <input value="{{ result.reffered_by }}"  placeholder="Referred By" id="referred" class="form-control" name="referred" type="text">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Process Type :</label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="process_type" name="process_type">
+                                          <option value="{{ result.process_type }}"> {{ result.process_type }}</option>
+                                          <option value="BB 1961 Registration">BB 1961 Registration</option>
+                                          <option value="Marriage Registration">Marriage Registration</option>
+                                          <option value="BA 1961 Registration">BA 1961 Registration</option>
+                                          <option value="Minor Birth Registration">Minor Birth Registration</option>
+                                          <option value="Divorce Registration">Divorce Registration</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">First Registration of : </label>
+                                  <input value="{{ result.first_registration_of }}" placeholder="First Registration of " id="first_register" class="form-control" name="First_register" type="text">
+                              </div>
+                             <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Lead Type : </label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="lead_type" name="lead_type">
+                                          <option value="{{ result.lead_type }}"> {{ result.lead_type }}</option>
+                                          <option value="Hot">Hot</option>
+                                          <option value="Cold">Cold</option>
+                                          <option value="Warm">Warm</option>
+                                          <option value="Closed">Closed</option>
+                                      </select>
+                                  </div>
+                              </div>
+                             <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight: 700;">Search Required :</label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="search_req" name="search_req">
+                                          <option value="{{ result.search_required }}">{{ result.search_required }}</option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                      </select>
+                                  </div>
+                              </div>
+                            <div class="form-group col-lg-3 col-md-6">
+                                  <label style="font-weight:700;">Assigned To : </label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="assign_to" name="assign_to">
+                                          <option value="{{ result.assigned_to }}"> {{ result.assigned_to }} </option>
+                                          <option value="1">Assigned To</option>
+                                          <option value="2">Assigned To</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                           <div class="form-group col-lg-3 col-md-6">
+                                  <label  style="font-weight: 700;">Search Location : </label>
+                                  <input value="{{ result.search_location }}"  placeholder="Search Location" id="search_location" class="form-control" name="search_location" type="search">
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label  style="font-weight: 700;">Search Taluka :</label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen">
+                                          <option value="{{ result.search_taluka }}"> {{ result.search_taluka }} </option>
+                                          <option value="Bardez">Bardez</option>
+                                          <option value="Sattari">Sattari</option>
+                                          <option value="Bicholim">Bicholim</option>
+                                          <option value="Pernem">Pernem</option>
+                                          <option value="Ponda">Ponda</option>
+                                          <option value="Tiswadi">Tiswadi</option>
+                                          <option value="Salcette">Salcette</option>
+                                          <option value="Canacona">Canacona</option>
+                                          <option value="Quepem">Quepem</option>
+                                          <option value="Marmugao">Marmugao</option>
+                                          <option value="Sanguem">Sanguem</option>
+
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label  style="font-weight: 700;">Whatsapp Group Created : <span class="asterisk-color">*</span> </label>
+                                  <div class="custom_select">
+                                      <select class="form-control not_chosen" id="wgc" name="wa_group">
+                                          <option value="{{ result.wa_group }}"> {{ result.wa_group }} </option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group col-lg-3 col-md-6">
+                                  <label  style="font-weight: 700;">Whatsapp Group Name  : <span class="asterisk-color">*</span></label>
+                                  <input   value="{{ result.wa_group_name }}" required="required" placeholder="Whatsapp Group Name " id="whatsapp_gname" class="form-control" name="wa_group_name" type="text">
+                              </div>
+
+                               <div class="form-group col-lg-3 col-md-6">
+                                  <label  style="font-weight: 700;">Address : <span class="asterisk-color">*</span></label>
+                                  <input value="{{ result.address }}" required="required" placeholder="Address" id="address" class="form-control" name="address" type="address">
+                               </div>
+
+                              <div class="col-lg-12">
+                                  <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius" name="submit" value="Submit">Save</button>
+                              </div>
+                              <div class="col-lg-12">
+                                  <div id="alert-msg" class="alert-msg text-center"></div>
+                              </div>
+                          </div>
+                      </form>
+
+                      </div>
+
+              </div>
+          </div>
+      </div>
+  </section>
+{##}
+{#<section class="small_pb overflow_hide">#}
+{#      <div class="container">#}
+{#          <div class="row align-items-center">#}
+{#              <div class="col-lg-12 col-md-12 col-sm-12 animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.1s" style="animation-delay: 0.1s; opacity: 1;">#}
+{#                  <div class="heading_s1 text-center">#}
+{#                    <h2>Client Details</h2>#}
+{#                  </div>#}
+{##}
+{#                  <div class="row">#}
+{#                      <table border = 1>#}
+{##}
+{#    <tr height = "50px" style="background: #0b0b0b;text-align: center">#}
+{#       <th style="color: white;padding: 20px"> {{ "Master ID" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Client Name - Click For Documents" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Email ID" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Whatsapp Group Name" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Edit" }} </th>#}
+{#       <th style="color: white;padding: 20px"> {{ "Delete" }} </th>#}
+{#    </tr>#}
+{#    {% for id in result %}#}
+{##}
+{#        <tr height = "50px" style="text-align: center">#}
+{#       <td> {{ id.idno }} </td>#}
+{#       <td> {{ id.name }} </td>#}
+{#       <td> {{ id.email }} </td>#}
+{#       <td> {{ id.wpgroup }} </td>#}
+{#       <td> <a ><i class="fa fa-edit" ></i></a> </td>#}
+{#       <td onclick="window.location='/deleteclient?id={{ id.idno }}'"> <a onclick=""><i class="fa fa-trash" ></i></a> </td>#}
+{#    </tr>#}
+{##}
+{#    {% endfor %}#}
+{# </table>#}
+{#                      <table id="customers">#}
+{#                        </table>#}
+{#                  </div>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#  </section>#}
+
+  <!-- Edit Client Data Modal Section -->
+  <section class="small_pb">
+      <div class="container">
+          <div class="row mb-md-5 mb-3">
+              <div class="col-md-12">
+                  <!-- Modal -->
+                  <div id = "editModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: 600;color: #8c8888;">Edit Client Details</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form method="post" name="enq_edit" id ="enq_edit">
+                        <div class="modal-body">
+
+                              <div class="row">
+                                    <input type="hidden" id="id_for_edit" name="id_for_edit" value="">
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Client Name : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder="Client Name" id="name1" class="form-control" name="name" type="text">
+                                   </div>
+                                   <div class="form-group col-lg-3 col-md-6">
+                                    <label>Phone Number * :</label>
+                                    <input  placeholder="Phone Number *" id="number1" class="form-control" name="number" type="phone">
+                                 </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Email id : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder=" Email id " id="email1" class="form-control" name="email" type="email">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Email id2 : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder="Email id2" id="email_alt1" class="form-control" name="email_alt" type="email">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Client Location : <span class="asterisk-color">*</span></label>
+                                      <input required="" placeholder="Client Location " id="location1" class="form-control" name="location" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">First Contact Date :</label>
+                                      <input placeholder="First Contact Date " class="form-control datepicker" id = "first_contact_date1" name="first_contact_date" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Source : <span class="asterisk-color">*</span></label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="source1" name = "source">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="Facebook">Facebook</option>
+                                            <option value="Instagram">Instagram</option>
+                                            <option value="Referrence">Referrence</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Referred By : </label>
+                                      <input placeholder="Client Location " id="referred_by1" class="form-control" name="referred_by" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Process Type : </label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="process_type1" name = "process_type">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="BB 1961 Registration">BB 1961 Registration</option>
+                                            <option value="Marriage Registration">Marriage Registration</option>
+                                            <option value="BA 1961 Registration">BA 1961 Registration</option>
+                                            <option value="Minor Birth Registration">Minor Birth Registration</option>
+                                            <option value="Divorce Registration">Divorce Registration</option>
+                                          </select>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">First Registration of :</label>
+                                      <input placeholder="First Registration of " id="first_registration_of1" class="form-control" name="first_registration_of" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Lead Type : </label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="lead_type1" name="lead_type">
+                                            <option value=""> --- Select ---</option>
+                                            <option value="Hot">Hot</option>
+                                            <option value="Cold">Cold</option>
+                                            <option value="Warm">Warm</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Search Required :</label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="search_required1" name= "search_required">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label style="font-weight: 700;">Assigned To :</label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id = "assign_to1" name= "assign_to">
+                                              <option value="">Assigned To</option>
+                                              <option value="1">Assigned To</option>
+                                              <option value="2">Assigned To</option>
+                                          </select>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">Search Location : </label>
+                                      <input  placeholder="Search Location" id="search_location1" class="form-control" name="search_location" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">Search Taluka :</label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="seach_taluka1" name="search_taluka">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="Bardez">Bardez</option>
+                                            <option value="Sattari">Sattari</option>
+                                            <option value="Bicholim">Bicholim</option>
+                                            <option value="Pernem">Pernem</option>
+                                            <option value="Ponda">Ponda</option>
+                                            <option value="Tiswadi">Tiswadi</option>
+                                            <option value="Salcette">Salcette</option>
+                                            <option value="Canacona">Canacona</option>
+                                            <option value="Quepem">Quepem</option>
+                                            <option value="Marmugao">Marmugao</option>
+                                            <option value="Sanguem">Sanguem</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">WA Group Created : <span class="asterisk-color">*</span> </label>
+                                      <div class="custom_select">
+                                          <select class="form-control not_chosen" id="wa_group1" name = "wa_group">
+                                            <option value=""> --- Select --- </option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">WA Group Name  : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder="Search Location " id="wa_group_name1" class="form-control" name="wa_group_name" type="text">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">Alternate Number :</label>
+                                      <input placeholder="Alternate Number" id="number_alt1" class="form-control" name="number_alt" type="phone">
+                                  </div>
+                                  <div class="form-group col-lg-3 col-md-6">
+                                      <label  style="font-weight: 700;">Address : <span class="asterisk-color">*</span></label>
+                                      <input  placeholder="Address*" id="address1" class="form-control" name="address" type="text">
+                                   </div>
+
+
+                                  <div class="col-lg-12">
+                                      <div id="alert-msg" class="alert-msg text-center"></div>
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                          <button type="submit" id="editChanges" class="btn btn-default">Save changes</button>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- END SECTION FEATURE -->
+
+  <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+  <!-- Search Client Modal Section -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content" style="background:rgba(0, 0, 0, 0.8);">
+            <form method="post" id="search_client">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"  style="color:#fff;">Search <i class="ion-ios-search-strong"></i></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"  style="color:#fff;">
+              <span aria-hidden="true" style="color:#fff;">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+                  <div class="row">
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Master Id:</label>
+                      <input placeholder="Master Id " id="id" class="form-control" name="id" type="number">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight:700;color:#fff;">Phone:</label>
+                      <input placeholder="Phone Number" id="phone" class="form-control" name="phone" type="phone">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Last Disposition:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id="disposition" name="disposition">
+                              <option value="">--- Select ---</option>
+                              <option value="Billing">Billing </option>
+                              <option value="Case Update">Case Update</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Client Name:</label>
+                      <input placeholder="Client Name" id="client_name" class="form-control" name="client_name" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Email Address: </label>
+                      <input  placeholder="Email Address" id="email" class="form-control" name="email" type="email">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Search Location: </label>
+                      <input  placeholder="Search Location" id="search_location" class="form-control" name="search_location" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">WhatsApp Group Name:</label>
+                      <input  placeholder="WhatsApp Group Name" id="wa_group_name" class="form-control" name="wa_group_name" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Taluka to Search:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id="taluka_to_search" name="taluka_to_search">
+                              <option value=""> --- Select --- </option>
+                              <option value="Bardez">Bardez</option>
+                              <option value="Sattari">Sattari</option>
+                              <option value="Bicholim">Bicholim</option>
+                              <option value="Pernem">Pernem</option>
+                              <option value="Ponda">Ponda</option>
+                              <option value="Tiswadi">Tiswadi</option>
+                              <option value="Salcette">Salcette</option>
+                              <option value="Canacona">Canacona</option>
+                              <option value="Quepem">Quepem</option>
+                              <option value="Marmugao">Marmugao</option>
+                              <option value="Sanguem">Sanguem</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Case Status:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id="case_status" name="case_status">
+                              <option value="">--- Select ---</option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Enquiry Follow Up:</label>
+                      <input placeholder="Enquiry Follow Up" id="enq_followup" class="form-control" name="enq_followup" type="text">
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Terms Email Send:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "terms_email_sent" name= "terms_email_sent">
+                              <option value="">--- Select ---</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                       <label style="font-weight: 700;color:#fff;">Case Owner:</label> <!-- Add Client List here -->
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "case_owner" name= "case_owner">
+                            <option value="">--- Select --- </option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Current Case Stage: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" name="current_case_stage" id="current_case_stage">
+                              <option value="">--- Select --- </option>
+                              <option value="Enquiry- Online">Enquiry- Online</option>
+                              <option value="Enquiry- Walkin"> Enquiry- Walkin</option>
+                              <option value="Will Get Back"> Will Get Back </option>
+                              <option value="Not Interested"> Not Interested </option>
+                              <option value="Enquiry - Documents Handed">Enquiry - Documents Handed </option>
+                              <option value="Initial Advance Paid">  Initial Advance Paid</option>
+                              <option value="Case Draft Shared">  Case Draft Shared</option>
+                              <option value="Submitted Documents Pending Client">Submitted Documents Pending Client </option>
+                              <option value="Search Billing"> Search Billing</option>
+                              <option value="Search On"> Search On</option>
+                              <option value="Case Study"> Case Study</option>
+                              <option value="URGENT - Case Study"> URGENT - Case Study </option>
+                              <option value="Case Study Shared">  Case Study Shared</option>
+                              <option value="Case Study Shared - Corrections on Client"> Case Study Shared - Corrections on Client </option>
+                              <option value="Case Study Shared - Corrections on Office">  Case Study Shared - Corrections on Office </option>
+                              <option value="A&T Billing">A&amp;T Billing </option>
+                              <option value="A&T Billing Shared"> A&amp;T Billing Shared </option>
+                              <option value="Start Attestation"> Start Attestation.</option>
+                              <option value="Translation"> Translation</option>
+                              <option value="Notary">Notary </option>
+                              <option value="Collector"> Collector</option>
+                              <option value="Apostile"> Apostile</option>
+                              <option value="Sent to PT"> Sent to PT</option>
+                              <option value="Submitted">Submitted </option>
+                              <option value="Submitted Corrections Client">Submitted Corrections Client </option>
+                              <option value="Submitted Corrections Office"> Submitted Corrections Office</option>
+                              <option value="Pending Submission"> Pending Submission</option>
+                              <option value="Pending Submission Due to Documents Pending">  Pending Submission Due to Documents Pending </option>
+                              <option value="Pending Submission Due to Fees"> Pending Submission Due to Fees </option>
+                              <option value="Concluded"> Concluded</option>
+                              <option value="Concluded Documents pending for next process ">Concluded Documents pending for next process </option>
+                              <option value="Case on Hold by Client"> Case on Hold by Client</option>
+                              <option value="Dead End">Dead End </option>
+                              <option value="Initial Refunded">Initial Refunded </option>
+                              <option value="NA"> NA </option>
+                              <option value="Birth Between 1961 to 1970">Birth Between 1961 to 1970 </option>
+                              <option value="Not Eligible">  Not Eligible</option>
+                              <option value="Cannot Afford">  Cannot Afford</option>
+
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Remind:</label> <!-- Add User List here -->
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "remind" name= "remind">
+                            <option value="">--- Select --- </option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Remind 2:</label> <!-- Add User List here -->
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "remind_2" name= "remind_2">
+                            <option value="">--- Select --- </option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Urgent Reminders: </label> <!-- Add User List here -->
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "urgent_reminders" name= "urgent_reminders">
+                            <option value="">--- Select --- </option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Joshua: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "joshua" name= "joshua">
+                            <option value="">--- Select --- </option>
+                              <option value="1">Instagram</option>
+                              <option value="2">Phone</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Correction start Date : </label>
+                      <input  placeholder="Correction Start Date" class="form-control datepicker" id = "corr_start_date" name="corr_start_date" type="text">
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Taluka:</label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "taluka" name= "taluka">
+                              <option value=""> --- Select --- </option>
+                              <option value="Bardez">Bardez</option>
+                              <option value="Sattari">Sattari</option>
+                              <option value="Bicholim">Bicholim</option>
+                              <option value="Pernem">Pernem</option>
+                              <option value="Ponda">Ponda</option>
+                              <option value="Tiswadi">Tiswadi</option>
+                              <option value="Salcette">Salcette</option>
+                              <option value="Canacona">Canacona</option>
+                              <option value="Quepem">Quepem</option>
+                              <option value="Marmugao">Marmugao</option>
+                              <option value="Sanguem">Sanguem</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6">
+                      <label style="font-weight: 700;color:#fff;">Billing: </label>
+                      <div class="custom_select">
+                          <select class="form-control not_chosen" id = "billing" name= "billing">
+                              <option value="">--- Select ---</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                          </select>
+                      </div>
+                  </div>
+                  </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+            <button type="submit" title="Submit Your Message!" class="btn btn-default btn-radius"  name="submit" value="Submit"> Search <i class="ion-ios-search-strong"></i> </button>
+          </div>
+      </form>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
