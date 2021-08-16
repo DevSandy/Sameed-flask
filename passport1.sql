@@ -1,37 +1,42 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: passport1
--- ------------------------------------------------------
--- Server version	8.0.23-0ubuntu0.20.04.1
+-- Host: 127.0.0.1
+-- Generation Time: Aug 10, 2021 at 03:06 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `passport1`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `client` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `number` varchar(15) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name1` varchar(100) NOT NULL,
+  `number1` varchar(15) NOT NULL,
   `number_alt` varchar(15) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `email_alt` varchar(100) DEFAULT NULL,
   `location` varchar(50) DEFAULT NULL,
-  `first_contact_date` date DEFAULT NULL,
-  `source` varchar(20) DEFAULT NULL,
+  `first_contact_date` datetime DEFAULT NULL,
+  `source1` varchar(20) DEFAULT NULL,
   `referred_by` varchar(30) DEFAULT NULL,
   `process_type` varchar(20) DEFAULT NULL,
   `first_registration_of` varchar(30) DEFAULT NULL,
@@ -42,43 +47,41 @@ CREATE TABLE `client` (
   `search_taluka` varchar(30) DEFAULT NULL,
   `wa_group` varchar(5) DEFAULT NULL,
   `wa_group_name` varchar(30) DEFAULT NULL,
-  `address` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `address` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `client`
 --
 
-LOCK TABLES `client` WRITE;
-/*!40000 ALTER TABLE `client` DISABLE KEYS */;
-INSERT INTO `client` VALUES (27,'Jyoti Harijan','9373555015','','jyotiharijan07@gmail.com','jyotiharijan07@gmail.com','Mapusa',NULL,'Facebook',NULL,'BB 1961 Registration',NULL,'Hot',NULL,NULL,'Goa',NULL,'Yes','Jk & Jyoti Work','H.No. 20 Feira Altha, Mapusa Goa','2021-04-19 06:34:27','2021-04-19 06:34:27'),(28,'Leonilda & Clemente','7666012739','+447459811634','leonildafernandes248@gmail.com','leonildafernandes248@gmail.com','Margao',NULL,'Facebook',NULL,'BA 1961 Registration',NULL,'Hot',NULL,NULL,'',NULL,'Yes','PCFG Leonilda & Clemente','Curtorim Salcete Goa','2021-04-19 09:50:14','2021-04-19 09:50:14');
-/*!40000 ALTER TABLE `client` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `client` (`id`, `name1`, `number1`, `number_alt`, `email`, `email_alt`, `location`, `first_contact_date`, `source1`, `referred_by`, `process_type`, `first_registration_of`, `lead_type`, `search_required`, `assigned_to`, `search_location`, `search_taluka`, `wa_group`, `wa_group_name`, `address`, `created_at`, `updated_at`) VALUES
+(27, 'Jyoti Harijan', '9373555015', '', 'jyotiharijan07@gmail.com', 'jyotiharijan07@gmail.com', 'Mapusa', NULL, 'Facebook', NULL, 'BB 1961 Registration', NULL, 'Hot', NULL, NULL, 'Goa', NULL, 'Yes', 'Jk & Jyoti Work', 'H.No. 20 Feira Altha, Mapusa Goa', '2021-04-19 06:34:27', '2021-04-19 06:34:27'),
+(28, 'Leonilda & Clemente', '7666012739', '+447459811634', 'leonildafernandes248@gmail.com', 'leonildafernandes248@gmail.com', 'Margao', NULL, 'Facebook', NULL, 'BA 1961 Registration', NULL, 'Hot', NULL, NULL, '', NULL, 'Yes', 'PCFG Leonilda & Clemente', 'Curtorim Salcete Goa', '2021-04-19 09:50:14', '2021-04-19 09:50:14'),
+(36, 'sandy san', '08660225160', '54248949+94', 'devsandy12@gmail.com', 'devsandy12@gmail.com', 'India', NULL, 'Facebook', 'bh kjbni', 'BA 1961 Registration', 'hjbiui', 'Hot', 'Yes', '1', 'India', NULL, 'Yes', 'jbjbih i', 'No.23, Hessargatta road ,AGBG layout,chikkasandra bengaluru', '2021-08-09 15:24:36', '2021-08-09 15:24:36'),
+(37, 'client name', 'phone number', 'alt phone numb', 'mail@gmail.com', 'altmail@gmail.com', 'Karnataka', NULL, 'Referrence', 'reffered by', 'Marriage Registratio', 'first registration of', 'Cold', 'Yes', '2', 'Goa', NULL, 'Yes', 'Marriage registration', 'No.23, Hessargatta road ,AGBG layout,chikkasandra bengaluru', '2021-08-09 15:28:07', '2021-08-09 15:28:07'),
+(38, 'client name', 'phone number', 'alt phone numb', 'mail@gmail.com', 'altmail@gmail.com', 'Karnataka', NULL, 'Referrence', 'reffered by', 'Marriage Registratio', 'first registration of', 'Cold', 'Yes', '2', 'Goa', NULL, 'Yes', 'Marriage registration', 'No.23, Hessargatta road ,AGBG layout,chikkasandra bengaluru', '2021-08-09 15:31:10', '2021-08-09 15:31:10');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `document`
 --
 
-DROP TABLE IF EXISTS `document`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
-  `registration` text,
-  `to_register` text,
-  `document` text,
-  `document_of` text,
-  `name` text,
-  `place` text,
+  `id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `registration` text DEFAULT NULL,
+  `to_register` text DEFAULT NULL,
+  `document` text DEFAULT NULL,
+  `document_of` text DEFAULT NULL,
+  `name` text DEFAULT NULL,
+  `place` text DEFAULT NULL,
   `date` date DEFAULT NULL,
   `registered_date` date DEFAULT NULL,
-  `doc_available` text,
-  `doc_in_office` text,
+  `doc_available` text DEFAULT NULL,
+  `doc_in_office` text DEFAULT NULL,
   `sac_date` date DEFAULT NULL,
   `a/t_date` date DEFAULT NULL,
   `translation_date` date DEFAULT NULL,
@@ -86,127 +89,181 @@ CREATE TABLE `document` (
   `collector_date` date DEFAULT NULL,
   `apostle_date` date DEFAULT NULL,
   `send_to_pt_date` date DEFAULT NULL,
-  `doc_reached_pt` text,
+  `doc_reached_pt` text DEFAULT NULL,
   `received_in_pt_date` date DEFAULT NULL,
   `submitted_date` date DEFAULT NULL,
   `concluded_date` date DEFAULT NULL,
   `doc_issue_date` date DEFAULT NULL,
-  `reg_bill` text,
-  `submitted` text,
-  `attachment` text,
-  `comment` text,
-  `billable` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `reg_bill` text DEFAULT NULL,
+  `submitted` text DEFAULT NULL,
+  `attachment` text DEFAULT NULL,
+  `comment` text DEFAULT NULL,
+  `billable` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `document`
 --
 
-LOCK TABLES `document` WRITE;
-/*!40000 ALTER TABLE `document` DISABLE KEYS */;
-INSERT INTO `document` VALUES (24,18,'test','self','this','self','Dattaprasad','place here','2021-01-08',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/.gitignore',NULL,NULL,'2021-02-17 11:14:27','2021-02-17 11:14:27'),(25,27,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/jyoti bank details.pdf',NULL,NULL,'2021-04-19 06:38:13','2021-04-19 06:38:13'),(26,27,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/PCFG - Terms & Conditions.pdf',NULL,NULL,'2021-04-19 09:19:28','2021-04-19 09:19:28'),(27,27,'Birth Before 1961',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/PCFG - Terms & Conditions.pdf',NULL,NULL,'2021-04-19 09:20:02','2021-04-19 09:20:02'),(28,28,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/Birth cert of Leonilda fraiza fernandes.pdf',NULL,NULL,'2021-04-19 10:24:51','2021-04-19 10:24:51'),(29,28,NULL,NULL,NULL,NULL,'Leonilda Fraiza Fernandes',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/Adhar card Leonilda fraiza fernandes.pdf',NULL,NULL,'2021-04-19 10:27:57','2021-04-19 10:27:57'),(30,28,NULL,NULL,NULL,NULL,'Leonilda Fraiza Fernandes',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/Birth cert of Leonilda fraiza fernandes.pdf',NULL,NULL,'2021-04-19 10:29:09','2021-04-19 10:29:09'),(31,28,NULL,NULL,'Handoff Shhet',NULL,'Leonilda Fraiza Fernandes',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/handoff sheet 7 apr 2021.pdf',NULL,NULL,'2021-04-19 10:31:25','2021-04-19 10:31:25'),(32,28,NULL,NULL,'casamento',NULL,'Leonilda Fraiza Fernandes',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/assento de casamento clemente & filipina.jpeg',NULL,NULL,'2021-04-19 10:31:52','2021-04-19 10:31:52'),(33,28,NULL,NULL,'nascimento',NULL,'Leonilda Fraiza Fernandes',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/assento de nascimento clemente.jpeg',NULL,NULL,'2021-04-19 10:32:21','2021-04-19 10:32:21'),(34,28,'Birth After 1961','Self','Adhar Card','Self','Leonilda Fraiza Fernandes','Curtorim',NULL,NULL,'Photocopy','Photocopy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'https://some-name-for-bucket.s3.amazonaws.com/assento de nascimento clemente.jpeg',NULL,NULL,'2021-04-19 10:36:59','2021-04-19 10:36:59');
-/*!40000 ALTER TABLE `document` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `document` (`id`, `client_id`, `registration`, `to_register`, `document`, `document_of`, `name`, `place`, `date`, `registered_date`, `doc_available`, `doc_in_office`, `sac_date`, `a/t_date`, `translation_date`, `notary_date`, `collector_date`, `apostle_date`, `send_to_pt_date`, `doc_reached_pt`, `received_in_pt_date`, `submitted_date`, `concluded_date`, `doc_issue_date`, `reg_bill`, `submitted`, `attachment`, `comment`, `billable`, `created_at`, `updated_at`) VALUES
+(24, 18, 'test', 'self', 'this', 'self', 'Dattaprasad', 'place here', '2021-01-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/.gitignore', NULL, NULL, '2021-02-17 11:14:27', '2021-02-17 11:14:27'),
+(25, 27, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/jyoti bank details.pdf', NULL, NULL, '2021-04-19 06:38:13', '2021-04-19 06:38:13'),
+(26, 27, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/PCFG - Terms & Conditions.pdf', NULL, NULL, '2021-04-19 09:19:28', '2021-04-19 09:19:28'),
+(27, 27, 'Birth Before 1961', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/PCFG - Terms & Conditions.pdf', NULL, NULL, '2021-04-19 09:20:02', '2021-04-19 09:20:02'),
+(28, 28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/Birth cert of Leonilda fraiza fernandes.pdf', NULL, NULL, '2021-04-19 10:24:51', '2021-04-19 10:24:51'),
+(29, 28, NULL, NULL, NULL, NULL, 'Leonilda Fraiza Fernandes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/Adhar card Leonilda fraiza fernandes.pdf', NULL, NULL, '2021-04-19 10:27:57', '2021-04-19 10:27:57'),
+(30, 28, NULL, NULL, NULL, NULL, 'Leonilda Fraiza Fernandes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/Birth cert of Leonilda fraiza fernandes.pdf', NULL, NULL, '2021-04-19 10:29:09', '2021-04-19 10:29:09'),
+(31, 28, NULL, NULL, 'Handoff Shhet', NULL, 'Leonilda Fraiza Fernandes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/handoff sheet 7 apr 2021.pdf', NULL, NULL, '2021-04-19 10:31:25', '2021-04-19 10:31:25'),
+(32, 28, NULL, NULL, 'casamento', NULL, 'Leonilda Fraiza Fernandes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/assento de casamento clemente & filipina.jpeg', NULL, NULL, '2021-04-19 10:31:52', '2021-04-19 10:31:52'),
+(33, 28, NULL, NULL, 'nascimento', NULL, 'Leonilda Fraiza Fernandes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/assento de nascimento clemente.jpeg', NULL, NULL, '2021-04-19 10:32:21', '2021-04-19 10:32:21'),
+(34, 28, 'Birth After 1961', 'Self', 'Adhar Card', 'Self', 'Leonilda Fraiza Fernandes', 'Curtorim', NULL, NULL, 'Photocopy', 'Photocopy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'https://some-name-for-bucket.s3.amazonaws.com/assento de nascimento clemente.jpeg', NULL, NULL, '2021-04-19 10:36:59', '2021-04-19 10:36:59');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `followup`
 --
 
-DROP TABLE IF EXISTS `followup`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `followup` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `followup_for` text,
-  `type` text,
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `followup_for` text DEFAULT NULL,
+  `type` text DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `comments` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `comments` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `followup`
 --
 
-LOCK TABLES `followup` WRITE;
-/*!40000 ALTER TABLE `followup` DISABLE KEYS */;
-INSERT INTO `followup` VALUES (26,18,'New Employee','Enquiry clients closures','2021-03-02','mjkl;','2021-02-05 16:39:22','2021-02-05 16:39:22');
-/*!40000 ALTER TABLE `followup` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `followup` (`id`, `user_id`, `followup_for`, `type`, `date`, `comments`, `created_at`, `updated_at`) VALUES
+(26, 18, 'New Employee', 'Enquiry clients closures', '2021-03-02', 'mjkl;', '2021-02-05 16:39:22', '2021-02-05 16:39:22');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `reminder`
 --
 
-DROP TABLE IF EXISTS `reminder`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reminder` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `remind` text,
-  `current_case_stage` text,
-  `closed_by` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `remind` text DEFAULT NULL,
+  `current_case_stage` text DEFAULT NULL,
+  `closed_by` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `reminder`
 --
 
-LOCK TABLES `reminder` WRITE;
-/*!40000 ALTER TABLE `reminder` DISABLE KEYS */;
-INSERT INTO `reminder` VALUES (13,18,'Joshua','','','2021-02-05 16:40:09','2021-02-05 16:40:09'),(14,18,'Joshua','Case Stage 1','New Employee','2021-02-05 16:40:19','2021-02-05 16:40:19'),(15,18,'Joshua','Case Stage 1','New Employee','2021-02-05 16:40:27','2021-02-05 16:40:27'),(16,18,'New Employee','Dead End','Joshua','2021-03-03 09:45:09','2021-03-03 09:45:09');
-/*!40000 ALTER TABLE `reminder` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `reminder` (`id`, `user_id`, `remind`, `current_case_stage`, `closed_by`, `created_at`, `updated_at`) VALUES
+(13, 18, 'Joshua', '', '', '2021-02-05 16:40:09', '2021-02-05 16:40:09'),
+(14, 18, 'Joshua', 'Case Stage 1', 'New Employee', '2021-02-05 16:40:19', '2021-02-05 16:40:19'),
+(15, 18, 'Joshua', 'Case Stage 1', 'New Employee', '2021-02-05 16:40:27', '2021-02-05 16:40:27'),
+(16, 18, 'New Employee', 'Dead End', 'Joshua', '2021-03-03 09:45:09', '2021-03-03 09:45:09');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `user_type` int NOT NULL DEFAULT '1',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `user_type` int(11) NOT NULL DEFAULT 1,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (20,'Admin','ekavade@gmail.com','data1234',1,'2021-04-19 06:13:26','2021-04-19 06:15:00'),(21,'Jyoti','jyoti@gmail.com','jyoti9012',2,'2021-04-19 06:16:19','2021-04-19 06:16:19'),(22,'Vinita','vinita@gmail.com','vinita9012',2,'2021-04-19 06:16:55','2021-04-19 06:16:55');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `user_type`, `created_at`, `updated_at`) VALUES
+(20, 'Admin', 'ekavade@gmail.com', 'data1234', 1, '2021-04-19 06:13:26', '2021-04-19 06:15:00'),
+(21, 'Jyoti', 'jyoti@gmail.com', 'jyoti9012', 2, '2021-04-19 06:16:19', '2021-04-19 06:16:19'),
+(22, 'Vinita', 'vinita@gmail.com', 'vinita9012', 2, '2021-04-19 06:16:55', '2021-04-19 06:16:55');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `document`
+--
+ALTER TABLE `document`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `followup`
+--
+ALTER TABLE `followup`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reminder`
+--
+ALTER TABLE `reminder`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `document`
+--
+ALTER TABLE `document`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `followup`
+--
+ALTER TABLE `followup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `reminder`
+--
+ALTER TABLE `reminder`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-04-20  5:56:08
